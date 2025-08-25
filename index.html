@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seventee - La plateforme de location immobilière qui révolutionne Lyon</title>
+    <meta name="description" content="Seventee connecte agences immobilières et locataires à Lyon. Plus de candidatures qualifiées, moins de temps perdu, processus simplifié.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seventee.com/">
+    <meta property="og:title" content="Seventee - Révolutionnez votre gestion locative à Lyon">
+    <meta property="og:description" content="30x plus de candidatures qualifiées. Processus simplifié. Dossiers vérifiés.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="logo">
+                    <img src="assets/logo-seventee.svg" alt="Seventee" class="logo__img">
+                </div>
+                <nav class="nav">
+                    <a href="#agences" class="nav__link">Agences</a>
+                    <a href="#candidats" class="nav__link">Candidats</a>
+                    <a href="#comment-ca-marche" class="nav__link">Comment ça marche</a>
+                    <a href="#contact" class="nav__link">Contact</a>
+                </nav>
+                <div class="header__cta">
+                    <a href="#demo" class="btn btn--primary">Demander une démo</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__text">
+                    <h1 class="hero__title">
+                        À Lyon, arrêtez de <span class="highlight">chercher</span> des locataires.
+                        <br>Commencez à les <span class="highlight">choisir</span>.
+                    </h1>
+                    <p class="hero__subtitle">
+                        La plateforme qui connecte agences immobilières et candidats locataires 
+                        pour une location plus simple, plus rapide et plus sûre.
+                    </p>
+                    <div class="hero__stats">
+                        <div class="stat">
+                            <div class="stat__number">30x</div>
+                            <div class="stat__label">plus de candidatures</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__number">6h</div>
+                            <div class="stat__label">économisées par location</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__number">25</div>
+                            <div class="stat__label">agences partenaires</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <img src="assets/hero-dashboard.png" alt="Interface Seventee" class="hero__img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Selection -->
+    <section class="target-selection">
+        <div class="container">
+            <h2 class="section__title">Qui êtes-vous ?</h2>
+            <div class="target-cards">
+                <div class="target-card" onclick="showAgencySection()">
+                    <div class="target-card__icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M3 21h18M3 10h18M5 6l7-3 7 3M5 10v11M19 10v11M9 10v11M15 10v11"/>
+                        </svg>
+                    </div>
+                    <h3 class="target-card__title">Je suis une agence immobilière</h3>
+                    <p class="target-card__description">
+                        Réduisez vos coûts de diffusion, gagnez du temps et 
+                        recevez uniquement des dossiers qualifiés.
+                    </p>
+                    <div class="target-card__cta">
+                        <span class="btn btn--outline">Découvrir l'offre agence</span>
+                    </div>
+                </div>
+                
+                <div class="target-card" onclick="showCandidateSection()">
+                    <div class="target-card__icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="target-card__title">Je cherche un logement</h3>
+                    <p class="target-card__description">
+                        Accédez aux meilleures offres 5 jours avant tout le monde 
+                        et certifiez votre dossier.
+                    </p>
+                    <div class="target-card__cta">
+                        <span class="btn btn--outline">Trouver mon logement</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agency Section -->
+    <section id="agences" class="section section--agency hidden">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Ils nous font confiance</h2>
+                <p class="section__subtitle">25 agences lyonnaises utilisent déjà Seventee</p>
+            </div>
+            
+            <!-- Problem Statement -->
+            <div class="problem-statement">
+                <h3 class="problem-statement__title">Vous reconnaissez-vous ?</h3>
+                <div class="problem-cards">
+                    <div class="problem-card">
+                        <div class="problem-card__icon">📞</div>
+                        <h4>Le déluge d'appels</h4>
+                        <p>Votre standard est saturé. Vos équipes passent plus de temps à répondre "c'est déjà loué" qu'à qualifier des candidats.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-card__icon">⏰</div>
+                        <h4>6 heures perdues par location</h4>
+                        <p>Entre le tri des emails, la vérification des pièces et les visites inutiles, chaque location vous coûte 6h de travail non facturable.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-card__icon">📄</div>
+                        <h4>Des dossiers incertains</h4>
+                        <p>Vous jonglez avec des dossiers incomplets, des pièces manquantes et un risque de fraude qui vous oblige à jouer les détectives.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution -->
+            <div class="solution">
+                <h3 class="solution__title">Reprenez le contrôle en 3 points clés</h3>
+                <div class="solution-cards">
+                    <div class="solution-card">
+                        <div class="solution-card__number">1</div>
+                        <h4>Efficacité</h4>
+                        <p><strong>Divisez votre temps de gestion par 10.</strong></p>
+                        <p>Recevez uniquement 2 à 3 dossiers qualifiés par annonce au lieu de 50 candidatures brutes.</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-card__number">2</div>
+                        <h4>Contrôle</h4>
+                        <p><strong>Maîtrisez vos coûts de diffusion.</strong></p>
+                        <p>Utilisez notre vivier exclusif et pilotez la diffusion sur les portails comme une option stratégique.</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-card__number">3</div>
+                        <h4>Qualité</h4>
+                        <p><strong>Gagnez en sérénité.</strong></p>
+                        <p>Nos dossiers sont pré-vérifiés (identité et revenus) pour vous assurer une base de travail saine.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="testimonials">
+                <h3 class="testimonials__title">Témoignages</h3>
+                <div class="testimonial-cards">
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__content">
+                            "Avec Seventee, nous avons réduit de moitié nos dépenses sur les portails et nos équipes sont enfin sereines."
+                        </div>
+                        <div class="testimonial-card__author">
+                            <strong>Directeur, Agence Partenaire Lyon</strong>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__content">
+                            "Le temps que nous avons gagné sur le tri des dossiers est colossal. Nous nous concentrons sur notre vrai métier : le conseil."
+                        </div>
+                        <div class="testimonial-card__author">
+                            <strong>Gérante, Régie Lyonnaise</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-section">
+                <h3>Prêt à transformer votre gestion locative ?</h3>
+                <div class="cta-buttons">
+                    <a href="#demo" class="btn btn--primary btn--large">Demander une démo gratuite</a>
+                    <a href="tel:0603171747" class="btn btn--outline btn--large">Appeler Guillaume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Candidate Section -->
+    <section id="candidats" class="section section--candidate hidden">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Trouvez votre logement plus facilement</h2>
+                <p class="section__subtitle">Accédez aux meilleures offres avant tout le monde</p>
+            </div>
+
+            <!-- Benefits for candidates -->
+            <div class="candidate-benefits">
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">🏠</div>
+                    <h3>Offres en avant-première</h3>
+                    <p>Découvrez les biens 5 jours avant leur publication sur les autres plateformes.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">✅</div>
+                    <h3>Dossier certifié</h3>
+                    <p>Faites certifier votre identité et vos revenus pour vous démarquer (15€).</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">🎯</div>
+                    <h3>Ciblage intelligent</h3>
+                    <p>Ne postulez que sur les biens où votre profil a des chances d'être retenu.</p>
+                </div>
+            </div>
+
+            <!-- Search Interface Preview -->
+            <div class="search-preview">
+                <h3>Recherchez votre logement</h3>
+                <div class="search-interface">
+                    <div class="search-row">
+                        <select class="search-input">
+                            <option>Type de logement</option>
+                            <option>Studio</option>
+                            <option>T1</option>
+                            <option>T2</option>
+                            <option>T3</option>
+                            <option>T4+</option>
+                        </select>
+                        <select class="search-input">
+                            <option>Arrondissement</option>
+                            <option>Lyon 1er</option>
+                            <option>Lyon 2ème</option>
+                            <option>Lyon 3ème</option>
+                            <option>Lyon 4ème</option>
+                            <option>Lyon 5ème</option>
+                            <option>Lyon 6ème</option>
+                            <option>Lyon 7ème</option>
+                            <option>Lyon 8ème</option>
+                            <option>Lyon 9ème</option>
+                        </select>
+                        <input type="number" placeholder="Budget max" class="search-input">
+                        <button class="btn btn--primary">Rechercher</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA for candidates -->
+            <div class="cta-section">
+                <h3>Déposez votre dossier gratuitement</h3>
+                <div class="cta-buttons">
+                    <a href="#inscription" class="btn btn--primary btn--large">Créer mon compte candidat</a>
+                    <a href="#dossier" class="btn btn--outline btn--large">Préparer mon dossier</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="comment-ca-marche" class="section section--how-it-works">
+        <div class="container">
+            <h2 class="section__title">Comment ça marche ?</h2>
+            
+            <div class="how-it-works-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="showTab('agency-process')">Pour les agences</button>
+                    <button class="tab-button" onclick="showTab('candidate-process')">Pour les candidats</button>
+                </div>
+                
+                <div id="agency-process" class="tab-content active">
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="process-step__number">1</div>
+                            <div class="process-step__content">
+                                <h4>Publiez votre annonce</h4>
+                                <p>Ajoutez votre bien sur notre plateforme en quelques clics.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step__number">2</div>
+                            <div class="process-step__content">
+                                <h4>Recevez des candidatures qualifiées</h4>
+                                <p>Obtenez 2-3 dossiers pré-vérifiés et adaptés à votre bien.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step__number">3</div>
+                            <div class="process-step__content">
+                                <h4>Choisissez le locataire idéal</h4>
+                                <p>Organisez les visites et signez avec le bon candidat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="candidate-process" class="tab-content">
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="process-step__number">1</div>
+                            <div class="process-step__content">
+                                <h4>Créez votre profil</h4>
+                                <p>Renseignez vos critères de recherche et déposez votre dossier.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step__number">2</div>
+                            <div class="process-step__content">
+                                <h4>Postulez en avant-première</h4>
+                                <p>Découvrez et postulez sur les biens avant leur diffusion massive.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step__number">3</div>
+                            <div class="process-step__content">
+                                <h4>Visitez et signez</h4>
+                                <p>Organisez votre visite et finalisez votre location.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cities Coverage -->
+    <section class="cities">
+        <div class="container">
+            <h2 class="section__title">Louez partout en France</h2>
+            <p class="section__subtitle">Seventee se déploie progressivement dans toute la France</p>
+            <div class="cities-grid">
+                <div class="city-card city-card--active">
+                    <h3>Lyon</h3>
+                    <p>25 agences partenaires</p>
+                </div>
+                <div class="city-card">
+                    <h3>Marseille</h3>
+                    <p>Bientôt disponible</p>
+                </div>
+                <div class="city-card">
+                    <h3>Paris</h3>
+                    <p>Bientôt disponible</p>
+                </div>
+                <div class="city-card">
+                    <h3>Bordeaux</h3>
+                    <p>Bientôt disponible</p>
+                </div>
+                <div class="city-card">
+                    <h3>Toulouse</h3>
+                    <p>Bientôt disponible</p>
+                </div>
+                <div class="city-card">
+                    <h3>Lille</h3>
+                    <p>Bientôt disponible</p>
+                </div>
+                <div class="city-card">
+                    <h3>Nantes</h3>
+                    <p>Bientôt disponible</p>
+                </div>
+                <div class="city-card">
+                    <h3>Autres villes</h3>
+                    <p>Sur demande</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Demo Section -->
+    <section id="contact" class="section section--contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Propriétaires, trouvez une agence</h2>
+                    <p>Recherchez les agences immobilières partenaires de votre ville</p>
+                    
+                    <div class="contact-form">
+                        <h3>Dossier carte Poisson Frite</h3>
+                        <form>
+                            <input type="email" placeholder="Votre email" class="form-input" required>
+                            <button type="submit" class="btn btn--primary">S'inscrire</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="demo-section" id="demo">
+                    <h2>Demander une démo</h2>
+                    <p>Découvrez comment Seventee peut transformer votre activité</p>
+                    
+                    <form class="demo-form">
+                        <input type="text" placeholder="Nom de votre agence" class="form-input" required>
+                        <input type="email" placeholder="Votre email professionnel" class="form-input" required>
+                        <input type="tel" placeholder="Votre téléphone" class="form-input" required>
+                        <select class="form-input" required>
+                            <option value="">Volume d'annonces/an</option>
+                            <option value="<10">Moins de 10</option>
+                            <option value="10-50">10 à 50</option>
+                            <option value="50-200">50 à 200</option>
+                            <option value=">200">Plus de 200</option>
+                        </select>
+                        <textarea placeholder="Votre message (optionnel)" class="form-input form-textarea"></textarea>
+                        <button type="submit" class="btn btn--primary btn--large">Demander ma démo gratuite</button>
+                    </form>
+                    
+                    <div class="contact-direct">
+                        <p>Ou appelez directement :</p>
+                        <a href="tel:0603171747" class="phone-link">
+                            <strong>Guillaume DESLANDES</strong><br>
+                            06.03.17.17.47
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <img src="assets/logo-seventee.svg" alt="Seventee" class="footer__logo">
+                    <p>La plateforme de location immobilière qui révolutionne Lyon</p>
+                </div>
+                
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4>Agences</h4>
+                        <ul>
+                            <li><a href="#agences">Découvrir l'offre</a></li>
+                            <li><a href="#demo">Demander une démo</a></li>
+                            <li><a href="#tarifs">Tarifs</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Candidats</h4>
+                        <ul>
+                            <li><a href="#candidats">Rechercher un logement</a></li>
+                            <li><a href="#inscription">Créer un compte</a></li>
+                            <li><a href="#aide">Aide</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Entreprise</h4>
+                        <ul>
+                            <li><a href="#about">À propos</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 Seventee. Tous droits réservés.</p>
+                <div class="footer__legal">
+                    <a href="#mentions">Mentions légales</a>
+                    <a href="#privacy">Politique de confidentialité</a>
+                    <a href="#cgv">CGV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
