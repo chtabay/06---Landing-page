@@ -713,7 +713,6 @@ body {
 .footer__logo {
     height: 32px;
     width: auto;
-    filter: brightness(0) invert(1);
 }
 
 .footer__links {
