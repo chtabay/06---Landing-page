@@ -22,18 +22,36 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form submissions
     setupFormHandlers();
     
-    // Initialize page with default state
-    showCandidateSection();
+    // Initialize page with candidate section visible by default
+    // (No need to call function as it's already the default layout)
+    
+    // Initialize city autocomplete
+    initializeCityAutocomplete();
+
+    // Try to swap hero illustration with local asset if available
+    trySwapHeroImage();
+
+    // Init version selector if present
+    const versionSelect = document.getElementById('versionSelect');
+    if (versionSelect) {
+        versionSelect.value = detectCurrentVariant();
+    }
 });
 
 // Show Agency Section
 function showAgencySection() {
     const agencySection = document.getElementById('agences');
     const candidateSection = document.getElementById('candidats');
+    const discoverCta = document.getElementById('discoverAgencyCta');
+    const backCta = document.getElementById('backToCandidatesCta');
     
     if (agencySection && candidateSection) {
         agencySection.classList.remove('hidden');
         candidateSection.classList.add('hidden');
+        if (discoverCta && backCta) {
+            discoverCta.classList.add('hidden');
+            backCta.classList.remove('hidden');
+        }
         
         // Scroll to agency section
         agencySection.scrollIntoView({
@@ -50,10 +68,16 @@ function showAgencySection() {
 function showCandidateSection() {
     const agencySection = document.getElementById('agences');
     const candidateSection = document.getElementById('candidats');
+    const discoverCta = document.getElementById('discoverAgencyCta');
+    const backCta = document.getElementById('backToCandidatesCta');
     
     if (agencySection && candidateSection) {
         candidateSection.classList.remove('hidden');
         agencySection.classList.add('hidden');
+        if (discoverCta && backCta) {
+            discoverCta.classList.remove('hidden');
+            backCta.classList.add('hidden');
+        }
         
         // Scroll to candidate section
         candidateSection.scrollIntoView({
@@ -371,6 +395,107 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(style);
 });
 
+// City Autocomplete functionality
+function initializeCityAutocomplete() {
+    const cityInput = document.getElementById('citySearch');
+    const dropdown = document.getElementById('autocompleteDropdown');
+    
+    if (!cityInput || !dropdown) return;
+    
+    const cities = [
+        'Lyon 1er (69001)', 'Lyon 2ème (69002)', 'Lyon 3ème (69003)', 'Lyon 4ème (69004)', 'Lyon 5ème (69005)', 'Lyon 6ème (69006)', 'Lyon 7ème (69007)', 'Lyon 8ème (69008)', 'Lyon 9ème (69009)',
+        'Villeurbanne (69100)', 'Vénissieux (69200)', 'Caluire-et-Cuire (69300)', 'Bron (69500)', 'Vaulx-en-Velin (69120)', 'Saint-Priest (69800)', 'Rillieux-la-Pape (69140)',
+        'Meyzieu (69330)', 'Décines-Charpieu (69150)', 'Oullins (69600)', 'Sainte-Foy-lès-Lyon (69110)', 'Tassin-la-Demi-Lune (69160)', 'Écully (69130)', 'Givors (69700)',
+        'Saint-Genis-Laval (69230)', 'Francheville (69340)', 'Chassieu (69680)', 'Dardilly (69570)', 'Limonest (69760)', "Marcy-l'Étoile (69280)", "Collonges-au-Mont-d'Or (69660)",
+        'Charbonnières-les-Bains (69260)', 'Neuville-sur-Saône (69250)'
+    ];
+    
+    let highlightedIndex = -1;
+    
+    cityInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        
+        if (query.length === 0) {
+            hideDropdown();
+            return;
+        }
+        
+        const filteredCities = cities.filter(city => 
+            city.toLowerCase().includes(query)
+        );
+        
+        if (filteredCities.length > 0) {
+            showDropdown(filteredCities);
+        } else {
+            hideDropdown();
+        }
+        
+        highlightedIndex = -1;
+    });
+    
+    cityInput.addEventListener('keydown', function(e) {
+        const items = dropdown.querySelectorAll('.autocomplete-item');
+        
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            highlightedIndex = Math.min(highlightedIndex + 1, items.length - 1);
+            updateHighlight(items);
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            highlightedIndex = Math.max(highlightedIndex - 1, -1);
+            updateHighlight(items);
+        } else if (e.key === 'Enter') {
+            e.preventDefault();
+            if (highlightedIndex >= 0 && items[highlightedIndex]) {
+                selectCity(items[highlightedIndex].textContent);
+            }
+        } else if (e.key === 'Escape') {
+            hideDropdown();
+        }
+    });
+    
+    cityInput.addEventListener('blur', function() {
+        // Delay hiding to allow click on dropdown items
+        setTimeout(hideDropdown, 150);
+    });
+    
+    function showDropdown(cities) {
+        dropdown.innerHTML = '';
+        
+        cities.forEach(city => {
+            const item = document.createElement('div');
+            item.className = 'autocomplete-item';
+            item.textContent = city;
+            item.addEventListener('click', () => selectCity(city));
+            dropdown.appendChild(item);
+        });
+        
+        dropdown.style.display = 'block';
+    }
+    
+    function hideDropdown() {
+        dropdown.style.display = 'none';
+        highlightedIndex = -1;
+    }
+    
+    function updateHighlight(items) {
+        items.forEach((item, index) => {
+            if (index === highlightedIndex) {
+                item.classList.add('highlighted');
+            } else {
+                item.classList.remove('highlighted');
+            }
+        });
+    }
+    
+    function selectCity(city) {
+        cityInput.value = city;
+        hideDropdown();
+        // Track city selection
+        trackEvent('city_selected', { city: city });
+    }
+}
+
 // Add keyboard navigation support
 document.addEventListener('keydown', function(event) {
     // ESC to close any open modals/notifications
@@ -384,6 +509,38 @@ document.addEventListener('keydown', function(event) {
         event.target.click();
     }
 });
+
+// Swap hero image with local asset if present
+function trySwapHeroImage() {
+    const heroImg = document.querySelector('.hero__img');
+    if (!heroImg) return;
+
+    const candidates = [
+        'Ressources/Seventee_Assets/hero_seventee.webp',
+        'Ressources/Seventee_Assets/hero_seventee.jpg',
+        'Ressources/Seventee_Assets/hero_seventee.png',
+        'Ressources/Seventee_Assets/hero.webp',
+        'Ressources/Seventee_Assets/hero.jpg',
+        'Ressources/Seventee_Assets/hero.png'
+    ];
+
+    let replaced = false;
+    const testNext = (index) => {
+        if (index >= candidates.length || replaced) return;
+        const testImg = new Image();
+        testImg.onload = function() {
+            if (replaced) return;
+            heroImg.src = candidates[index];
+            replaced = true;
+        };
+        testImg.onerror = function() {
+            testNext(index + 1);
+        };
+        testImg.src = candidates[index] + '?v=' + Date.now();
+    };
+
+    testNext(0);
+}
 
 // Add focus management for better accessibility
 document.addEventListener('DOMContentLoaded', function() {
@@ -410,3 +567,17 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 });
+
+// Switch between variants
+function switchVersion(path) {
+    if (!path) return;
+    window.location.href = path;
+}
+
+function detectCurrentVariant() {
+    const file = (window.location.pathname.split('/').pop() || 'index.html');
+    if (file === '' || file === 'index.html') return 'index.html';
+    if (file === 'index-alt.html') return 'index-alt.html';
+    if (file === 'compare.html') return 'compare.html';
+    return 'index.html';
+}

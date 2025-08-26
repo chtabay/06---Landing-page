@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparer les versions - Seventee</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .compare-controls { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; }
+        .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; height: calc(100vh - 140px); }
+        .compare-panel { display: flex; flex-direction: column; }
+        .compare-panel header { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+        .compare-panel iframe { flex: 1; width: 100%; border: 1px solid var(--border-color); border-radius: 8px; }
+        .compare-select { padding: 6px 10px; border: 1px solid var(--border-color); border-radius: 6px; }
+        .compare-url { width: 100%; padding: 6px 10px; border: 1px solid var(--border-color); border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <div class="container" style="padding-top: 20px;">
+        <div class="compare-controls">
+            <a href="index.html" class="btn btn--outline">Retour à la version A</a>
+            <a href="index-alt.html" class="btn btn--outline">Aller à la version B</a>
+        </div>
+        <div class="compare-grid">
+            <div class="compare-panel">
+                <header>
+                    <select id="leftVariant" class="compare-select">
+                        <option value="index.html">Version A (index.html)</option>
+                        <option value="index-alt.html">Version B (index-alt.html)</option>
+                    </select>
+                    <select id="leftSub" class="compare-select">
+                        <option value="#top">Haut de page</option>
+                        <option value="#candidats">Section candidats</option>
+                        <option value="#agences">Section agences</option>
+                        <option value="#comment-ca-marche">Comment ça marche</option>
+                        <option value="#contact">Contact/Démo</option>
+                    </select>
+                </header>
+                <iframe id="leftFrame" src="index.html"></iframe>
+            </div>
+            <div class="compare-panel">
+                <header>
+                    <select id="rightVariant" class="compare-select">
+                        <option value="index.html">Version A (index.html)</option>
+                        <option value="index-alt.html" selected>Version B (index-alt.html)</option>
+                    </select>
+                    <select id="rightSub" class="compare-select">
+                        <option value="#top">Haut de page</option>
+                        <option value="#candidats">Section candidats</option>
+                        <option value="#agences">Section agences</option>
+                        <option value="#comment-ca-marche">Comment ça marche</option>
+                        <option value="#contact">Contact/Démo</option>
+                    </select>
+                </header>
+                <iframe id="rightFrame" src="index-alt.html"></iframe>
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateFrame(frameId, variantId, subId) {
+            const frame = document.getElementById(frameId);
+            const variant = document.getElementById(variantId).value;
+            const sub = document.getElementById(subId).value;
+            const url = sub && sub !== '#top' ? variant + sub : variant;
+            frame.src = url;
+        }
+        document.getElementById('leftVariant').addEventListener('change', () => updateFrame('leftFrame','leftVariant','leftSub'));
+        document.getElementById('leftSub').addEventListener('change', () => updateFrame('leftFrame','leftVariant','leftSub'));
+        document.getElementById('rightVariant').addEventListener('change', () => updateFrame('rightFrame','rightVariant','rightSub'));
+        document.getElementById('rightSub').addEventListener('change', () => updateFrame('rightFrame','rightVariant','rightSub'));
+    </script>
+</body>
+</html>
+
+
