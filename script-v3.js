@@ -12,7 +12,7 @@ const heroMessages = [
     'Vous en avez marre de <span class="highlight">trier 50 candidatures</span> ?',
     'Votre standard <span class="highlight">sature</span> à chaque annonce ?',
     'Vous perdez <span class="highlight">6h par location</span> en tri ?',
-    'Vos coûts de diffusion <span class="highlight">explosent</span> ?',
+    'Vos coûts de diffusion ont <span class="highlight">augmenté de 50%</span> ?',
     'Vous dites "c\'est déjà loué" <span class="highlight">50 fois par jour</span> ?',
     'Vos équipes sont <span class="highlight">épuisées</span> par le tri ?'
 ];

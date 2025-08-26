@@ -162,6 +162,18 @@ body {
     font-weight: 700;
 }
 
+.problem-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: var(--white);
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    margin-bottom: var(--spacing-4);
+    box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
+}
+
 .hero__subtitle {
     font-size: var(--font-size-xl);
     color: var(--text-light);
@@ -180,7 +192,17 @@ body {
 .stat__number {
     font-size: var(--font-size-3xl);
     font-weight: 700;
-    color: var(--primary-color);
+    color: #ff6b6b;
+    position: relative;
+}
+
+.stat__number::before {
+    content: "⚠️";
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--font-size-lg);
 }
 
 .stat__label {
@@ -203,6 +225,24 @@ body {
     box-shadow: var(--shadow);
     text-align: center;
     border-left: 4px solid #ff6b6b;
+    position: relative;
+    overflow: hidden;
+}
+
+.problem-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
+}
+
+.problem-card p {
+    color: #d63031;
+    font-weight: 600;
+    margin-top: var(--spacing-2);
 }
 
 .problem-icon {
