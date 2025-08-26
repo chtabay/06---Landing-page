@@ -102,8 +102,14 @@ function updateTargetCardStates(activeType) {
     });
 }
 
-// Tab functionality for "How it works" section
+// Tab functionality for "How it works" section (only for version A)
 function showTab(tabId) {
+    // Check if we're on version A (with tabs) or version B (with columns)
+    const hasTabs = document.querySelector('.tab-content');
+    if (!hasTabs) {
+        return; // Version B uses columns, no tab functionality needed
+    }
+    
     // Hide all tab contents
     const tabContents = document.querySelectorAll('.tab-content');
     tabContents.forEach(content => {
