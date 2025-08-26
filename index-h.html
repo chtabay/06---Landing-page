@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seventee - 3 dossiers. 50% d'économies. Point.</title>
+    <meta name="description" content="Seventee : 3 candidatures maximum par annonce. -50% sur vos coûts. Démo en 5 minutes.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seventee.com/">
+    <meta property="og:title" content="Seventee - 3 dossiers. 50% d'économies. Point.">
+    <meta property="og:description" content="Ultra simple. Ultra efficace. Démo en 5 minutes.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="Ressources/Seventee_Logo_Black_Green_RVB.svg">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles-h.css">
+</head>
+<body>
+    <!-- Hero Section - ULTRA MINIMAL -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="Ressources/Seventee_Logo_Black_Green_RVB.svg" alt="Seventee" class="logo__image">
+                </div>
+                
+                <!-- Core Message -->
+                <div class="message">
+                    <h1 class="message__title">
+                        3 dossiers.<br>
+                        50% d'économies.<br>
+                        <span class="highlight">Point.</span>
+                    </h1>
+                    
+                    <p class="message__subtitle">
+                        Fini le tri de 50 candidatures.<br>
+                        Seventee vous donne exactement 3 dossiers préqualifiés.
+                    </p>
+                </div>
+                
+                <!-- Proof Points -->
+                <div class="proof">
+                    <div class="proof__item">
+                        <span class="proof__number">25</span>
+                        <span class="proof__text">agences</span>
+                    </div>
+                    <div class="proof__item">
+                        <span class="proof__number">-50%</span>
+                        <span class="proof__text">de coûts</span>
+                    </div>
+                    <div class="proof__item">
+                        <span class="proof__number">6h</span>
+                        <span class="proof__text">gagnées</span>
+                    </div>
+                </div>
+                
+                <!-- Single CTA -->
+                <div class="cta">
+                    <button class="btn" onclick="openDemo()">
+                        <span class="btn__text">Démo 5 min</span>
+                        <span class="btn__arrow">→</span>
+                    </button>
+                    
+                    <div class="cta__note">
+                        Gratuit • Sans engagement • Réponse immédiate
+                    </div>
+                </div>
+                
+                <!-- Version Switcher (minimal) -->
+                <div class="version-switch">
+                    <select id="versionSelect" onchange="switchVersion(this.value)">
+                        <option value="index.html">A</option>
+                        <option value="index-alt.html">B</option>
+                        <option value="index-v3.html">C</option>
+                        <option value="index-d.html">D</option>
+                        <option value="index-e.html">E</option>
+                        <option value="index-f.html">F</option>
+                        <option value="index-g.html">G</option>
+                        <option value="index-h.html" selected>H</option>
+                        <option value="compare.html">All</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Modal -->
+    <div id="demoModal" class="modal">
+        <div class="modal__overlay" onclick="closeDemo()"></div>
+        <div class="modal__content">
+            <button class="modal__close" onclick="closeDemo()">×</button>
+            
+            <div class="demo-form">
+                <h2 class="demo-form__title">Démo en 5 minutes</h2>
+                <p class="demo-form__subtitle">Guillaume vous rappelle immédiatement</p>
+                
+                <form class="form" id="demoForm">
+                    <input type="text" name="name" placeholder="Votre nom" class="form__input" required>
+                    <input type="text" name="company" placeholder="Votre agence" class="form__input" required>
+                    <input type="tel" name="phone" placeholder="Votre téléphone" class="form__input" required>
+                    
+                    <button type="submit" class="form__submit">
+                        <span class="submit__text">Appeler maintenant</span>
+                        <span class="submit__icon">📞</span>
+                    </button>
+                </form>
+                
+                <div class="demo-guarantee">
+                    <span class="guarantee__icon">⚡</span>
+                    <span class="guarantee__text">Appel sous 2 minutes garanti</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Minimal Footer -->
+    <footer class="footer">
+        <div class="footer__content">
+            <a href="tel:0603171747" class="footer__phone">06 03 17 17 47</a>
+            <span class="footer__separator">•</span>
+            <a href="mailto:guillaume.deslandes@seventee.com" class="footer__email">guillaume.deslandes@seventee.com</a>
+        </div>
+    </footer>
+
+    <script src="script-h.js"></script>
+</body>
+</html>

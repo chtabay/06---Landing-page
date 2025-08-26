@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seventee - Rejoignez les 25 agences lyonnaises qui nous font confiance</title>
+    <meta name="description" content="25 agences partenaires. 1000+ locations réussies. Rejoignez les professionnels qui ont choisi Seventee.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seventee.com/">
+    <meta property="og:title" content="Seventee - 25 agences nous font confiance">
+    <meta property="og:description" content="Rejoignez les professionnels qui transforment leur gestion locative avec Seventee.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="Ressources/Seventee_Logo_Black_Green_RVB.svg">
+    <link rel="icon" type="image/png" href="Ressources/Seventee_Logo_White_Green_RVB_resized.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles-d.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__brand">
+                    <img src="Ressources/Seventee_Logo_Black_Green_RVB.svg" alt="Seventee" class="header__logo">
+                    <div class="trust-badge">
+                        <span class="trust-badge__icon">✓</span>
+                        <span class="trust-badge__text">Certifié professionnel</span>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <a href="#temoignages" class="nav__link">Témoignages</a>
+                    <a href="#references" class="nav__link">Références</a>
+                    <a href="#contact" class="nav__link">Contact</a>
+                    <div class="version-switcher">
+                        <select id="versionSelect" class="version-select" onchange="switchVersion(this.value)">
+                            <option value="index.html">Version A</option>
+                            <option value="index-alt.html">Version B</option>
+                            <option value="index-v3.html">Version C</option>
+                            <option value="index-d.html" selected>Version D</option>
+                            <option value="index-e.html">Version E</option>
+                            <option value="index-f.html">Version F</option>
+                            <option value="index-g.html">Version G</option>
+                            <option value="index-h.html">Version H</option>
+                            <option value="compare.html">Comparer toutes</option>
+                        </select>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - SOCIAL PROOF -->
+    <section id="hero" class="hero hero--social-proof">
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__text">
+                    <div class="social-proof-header">
+                        <div class="client-count">
+                            <span class="client-count__number">25+</span>
+                            <span class="client-count__label">agences partenaires</span>
+                        </div>
+                        <div class="success-metrics">
+                            <div class="metric">
+                                <span class="metric__number">1000+</span>
+                                <span class="metric__label">locations réussies</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric__number">98%</span>
+                                <span class="metric__label">satisfaction client</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h1 class="hero__title">
+                        Rejoignez les <span class="highlight">professionnels de confiance</span> qui transforment leur gestion locative
+                    </h1>
+                    
+                    <p class="hero__subtitle">
+                        Les agences les plus performantes de Lyon ont déjà choisi Seventee. 
+                        Découvrez pourquoi elles nous recommandent.
+                    </p>
+
+                    <!-- Client Logos -->
+                    <div class="client-logos">
+                        <div class="client-logos__title">Ils nous font confiance :</div>
+                        <div class="client-logos__grid">
+                            <div class="client-logo">Agence Partenaire</div>
+                            <div class="client-logo">Régie Immobilière</div>
+                            <div class="client-logo">Groupe Gerim</div>
+                            <div class="client-logo">Cogerim</div>
+                            <div class="client-logo">+ 21 autres</div>
+                        </div>
+                    </div>
+
+                    <div class="hero__cta">
+                        <a href="#demo" class="btn btn--primary btn--large">
+                            <span class="btn__icon">👥</span>
+                            Rejoindre nos partenaires
+                        </a>
+                        <div class="cta-social-proof">
+                            <span class="cta-social-proof__text">Déjà <strong>3 nouvelles agences</strong> ce mois</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero__visual">
+                    <div class="testimonial-preview">
+                        <div class="testimonial-card testimonial-card--featured">
+                            <div class="testimonial-card__quote">
+                                "Seventee a révolutionné notre façon de travailler. Nos équipes sont plus sereines et nos résultats parlent d'eux-mêmes."
+                            </div>
+                            <div class="testimonial-card__author">
+                                <div class="author-avatar">
+                                    <span class="author-avatar__initials">MD</span>
+                                </div>
+                                <div class="author-info">
+                                    <div class="author-name">Marie Dubois</div>
+                                    <div class="author-title">Directrice, Agence Partenaire</div>
+                                    <div class="author-location">Lyon 6ème</div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card__rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section id="proof" class="section section--proof">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Des résultats prouvés</h2>
+                <p class="section__subtitle">Les chiffres de nos partenaires parlent d'eux-mêmes</p>
+            </div>
+            
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <div class="proof-card__icon">📈</div>
+                    <div class="proof-card__metric">-50%</div>
+                    <div class="proof-card__label">de coûts de diffusion</div>
+                    <div class="proof-card__source">Source : Étude interne sur 25 agences</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-card__icon">⏱️</div>
+                    <div class="proof-card__metric">6h</div>
+                    <div class="proof-card__label">économisées par location</div>
+                    <div class="proof-card__source">Moyenne calculée sur 1000 locations</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-card__icon">🎯</div>
+                    <div class="proof-card__metric">3</div>
+                    <div class="proof-card__label">candidatures maximum</div>
+                    <div class="proof-card__source">Garantie qualité Seventee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="temoignages" class="section section--testimonials">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Ce que disent nos partenaires</h2>
+                <p class="section__subtitle">Témoignages authentiques de professionnels comme vous</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__content">
+                        <div class="testimonial-card__quote">
+                            "Nous avons réduit de moitié nos dépenses sur les portails et nos équipes sont enfin sereines. Le ROI a été immédiat."
+                        </div>
+                        <div class="testimonial-card__author">
+                            <div class="author-avatar">
+                                <span class="author-avatar__initials">JD</span>
+                            </div>
+                            <div class="author-info">
+                                <div class="author-name">Jean Dupont</div>
+                                <div class="author-title">Directeur</div>
+                                <div class="author-company">Agence Partenaire</div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card__metrics">
+                            <span class="metric-tag">-45% de coûts</span>
+                            <span class="metric-tag">15 locations/mois</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-card__content">
+                        <div class="testimonial-card__quote">
+                            "Le temps que nous avons gagné sur le tri des dossiers est colossal. Nous nous concentrons sur notre vrai métier : le conseil."
+                        </div>
+                        <div class="testimonial-card__author">
+                            <div class="author-avatar">
+                                <span class="author-avatar__initials">SM</span>
+                            </div>
+                            <div class="author-info">
+                                <div class="author-name">Sophie Martin</div>
+                                <div class="author-title">Gérante</div>
+                                <div class="author-company">Régie Immobilière</div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card__metrics">
+                            <span class="metric-tag">-6h par location</span>
+                            <span class="metric-tag">Client depuis 8 mois</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-card__content">
+                        <div class="testimonial-card__quote">
+                            "L'équipe Seventee comprend nos enjeux. Le support est réactif et la solution évolue selon nos besoins."
+                        </div>
+                        <div class="testimonial-card__author">
+                            <div class="author-avatar">
+                                <span class="author-avatar__initials">PL</span>
+                            </div>
+                            <div class="author-info">
+                                <div class="author-name">Pierre Leblanc</div>
+                                <div class="author-title">Responsable Location</div>
+                                <div class="author-company">Groupe Gerim</div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card__metrics">
+                            <span class="metric-tag">50+ annonces</span>
+                            <span class="metric-tag">Partenaire privilégié</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="references" class="section section--awards">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Reconnu par les professionnels</h2>
+            </div>
+            
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-card__icon">🏆</div>
+                    <div class="award-card__title">Innovation 2024</div>
+                    <div class="award-card__subtitle">Salon de l'Immobilier</div>
+                </div>
+                <div class="award-card">
+                    <div class="award-card__icon">⭐</div>
+                    <div class="award-card__title">4.8/5 étoiles</div>
+                    <div class="award-card__subtitle">Avis clients certifiés</div>
+                </div>
+                <div class="award-card">
+                    <div class="award-card__icon">🔒</div>
+                    <div class="award-card__title">RGPD Conforme</div>
+                    <div class="award-card__subtitle">Données sécurisées</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="demo" class="section section--cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Rejoignez les leaders du marché</h2>
+                <p class="cta-subtitle">
+                    Plus de 25 agences nous font déjà confiance. 
+                    Découvrez pourquoi en 15 minutes.
+                </p>
+                
+                <div class="cta-urgency">
+                    <span class="urgency-text">🔥 <strong>3 nouvelles agences</strong> nous ont rejoint ce mois</span>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn--primary btn--large">
+                        <span class="btn__icon">📞</span>
+                        Demander une démonstration
+                    </a>
+                    <a href="tel:0603171747" class="btn btn--outline btn--large">
+                        Appeler Guillaume directement
+                    </a>
+                </div>
+
+                <div class="cta-guarantee">
+                    <span class="guarantee-icon">✅</span>
+                    <span class="guarantee-text">Démonstration sans engagement • Réponse sous 2h</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section--contact">
+        <div class="container">
+            <h2 class="section__title">Parlons de votre projet</h2>
+            <p class="section__subtitle">Guillaume vous explique tout personnellement</p>
+            
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form class="form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nom complet *</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company" class="form-label">Agence *</label>
+                            <input type="text" id="company" name="company" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email professionnel *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="properties" class="form-label">Nombre d'annonces de location par mois</label>
+                            <select id="properties" name="properties" class="form-select">
+                                <option value="">Sélectionnez</option>
+                                <option value="1-5">1 à 5 annonces</option>
+                                <option value="6-15">6 à 15 annonces</option>
+                                <option value="16-30">16 à 30 annonces</option>
+                                <option value="30+">Plus de 30 annonces</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--large btn--full">
+                            <span class="btn__icon">🚀</span>
+                            Réserver ma démonstration
+                        </button>
+                        <div class="form-guarantee">
+                            <span class="guarantee-icon">🔒</span>
+                            <span class="guarantee-text">Vos données sont protégées et ne seront jamais partagées</span>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="contact-social-proof">
+                    <div class="recent-signups">
+                        <h3 class="recent-signups__title">Derniers partenaires :</h3>
+                        <div class="recent-signup">
+                            <span class="signup-time">Il y a 2 jours</span>
+                            <span class="signup-company">Agence du Centre - Lyon 2ème</span>
+                        </div>
+                        <div class="recent-signup">
+                            <span class="signup-time">Il y a 5 jours</span>
+                            <span class="signup-company">Régie Presqu'île - Lyon 1er</span>
+                        </div>
+                        <div class="recent-signup">
+                            <span class="signup-time">Il y a 1 semaine</span>
+                            <span class="signup-company">Immobilier Bellecour</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <img src="Ressources/Seventee_Logo_White_Green_RVB_resized.png" alt="Seventee" class="footer__logo">
+                    <p>La plateforme de confiance des professionnels de l'immobilier</p>
+                    <div class="footer-social-proof">
+                        <span class="social-proof-number">25+</span>
+                        <span class="social-proof-text">agences partenaires</span>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4>Nos références</h4>
+                        <ul>
+                            <li><a href="#temoignages">Témoignages</a></li>
+                            <li><a href="#references">Certifications</a></li>
+                            <li><a href="#contact">Devenir partenaire</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#demo">Demander une démo</a></li>
+                            <li><a href="tel:0603171747">06 03 17 17 47</a></li>
+                            <li><a href="mailto:guillaume.deslandes@seventee.com">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Entreprise</h4>
+                        <ul>
+                            <li><a href="https://linkedin.com/company/seventee" target="_blank">LinkedIn</a></li>
+                            <li><a href="#legal">Mentions légales</a></li>
+                            <li><a href="#rgpd">RGPD</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script-d.js"></script>
+</body>
+</html>

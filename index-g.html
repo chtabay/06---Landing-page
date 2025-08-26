@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seventee - L'histoire de Marie : de l'épuisement à la sérénité</title>
+    <meta name="description" content="Découvrez comment Marie a transformé sa vie professionnelle grâce à Seventee. Une histoire vraie de réussite.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seventee.com/">
+    <meta property="og:title" content="L'histoire de Marie - Seventee">
+    <meta property="og:description" content="De 60h/semaine à une vie équilibrée. L'histoire vraie d'une transformation.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="Ressources/Seventee_Logo_Black_Green_RVB.svg">
+    <link rel="icon" type="image/png" href="Ressources/Seventee_Logo_White_Green_RVB_resized.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles-g.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__brand">
+                    <img src="Ressources/Seventee_Logo_Black_Green_RVB.svg" alt="Seventee" class="header__logo">
+                    <div class="story-badge">
+                        <span class="story-badge__icon">💙</span>
+                        <span class="story-badge__text">Histoires vraies</span>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <a href="#histoire" class="nav__link">L'histoire</a>
+                    <a href="#transformation" class="nav__link">Transformation</a>
+                    <a href="#temoignages" class="nav__link">Témoignages</a>
+                    <div class="version-switcher">
+                        <select id="versionSelect" class="version-select" onchange="switchVersion(this.value)">
+                            <option value="index.html">Version A</option>
+                            <option value="index-alt.html">Version B</option>
+                            <option value="index-v3.html">Version C</option>
+                            <option value="index-d.html">Version D</option>
+                            <option value="index-e.html">Version E</option>
+                            <option value="index-f.html">Version F</option>
+                            <option value="index-g.html" selected>Version G</option>
+                            <option value="index-h.html">Version H</option>
+                            <option value="compare.html">Comparer toutes</option>
+                        </select>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - STORY -->
+    <section id="hero" class="hero hero--story">
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__story">
+                    <div class="story-intro">
+                        <span class="story-label">Une histoire vraie</span>
+                        <h1 class="hero__title">
+                            Marie travaillait <span class="highlight-stress">60h par semaine</span><br>
+                            et n'arrivait plus à voir ses enfants
+                        </h1>
+                    </div>
+                    
+                    <div class="story-quote">
+                        <div class="quote-content">
+                            "Je rentrais épuisée tous les soirs. Entre les appels incessants, 
+                            le tri de centaines de dossiers et la pression des propriétaires, 
+                            j'avais l'impression de courir dans une roue de hamster."
+                        </div>
+                        <div class="quote-author">
+                            <div class="author-image">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9IiM2MzY2ZjEiLz4KPHN2ZyBpZD0iYXZhdGFyIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiB4PSIxMCIgeT0iMTAiPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iNDAiIHI9IjEyIiBmaWxsPSIjZmZmIi8+CiAgPGVsbGlwc2UgY3g9IjUwIiBjeT0iNzUiIHJ4PSIyMCIgcnk9IjE1IiBmaWxsPSIjZmZmIi8+Cjwvc3ZnPgo8L3N2Zz4K" alt="Marie">
+                            </div>
+                            <div class="author-info">
+                                <span class="author-name">Marie Dubois</span>
+                                <span class="author-title">Directrice d'agence à Lyon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero__visual">
+                    <div class="before-after">
+                        <div class="timeline-visual">
+                            <div class="timeline-point timeline-point--stress">
+                                <span class="timeline-icon">😰</span>
+                                <span class="timeline-label">AVANT</span>
+                            </div>
+                            <div class="timeline-line"></div>
+                            <div class="timeline-point timeline-point--peace">
+                                <span class="timeline-icon">😊</span>
+                                <span class="timeline-label">APRÈS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Story -->
+    <section id="probleme" class="section section--problem-story">
+        <div class="container">
+            <div class="story-section">
+                <div class="story-content">
+                    <h2 class="story-title">Le quotidien de Marie ressemble au vôtre ?</h2>
+                    
+                    <div class="problem-timeline">
+                        <div class="timeline-item">
+                            <div class="time-marker">7h00</div>
+                            <div class="problem-card">
+                                <div class="problem-icon">☕</div>
+                                <div class="problem-text">
+                                    <h3>Déjà 15 appels manqués</h3>
+                                    <p>"Mon téléphone sonnait avant même que j'arrive au bureau. 
+                                    Des candidats impatients, des propriétaires inquiets..."</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="time-marker">9h00</div>
+                            <div class="problem-card">
+                                <div class="problem-icon">📋</div>
+                                <div class="problem-text">
+                                    <h3>La montagne de dossiers</h3>
+                                    <p>"Pour chaque annonce, je recevais entre 30 et 80 candidatures. 
+                                    Impossible de tout traiter correctement."</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="time-marker">12h00</div>
+                            <div class="problem-card">
+                                <div class="problem-icon">🥪</div>
+                                <div class="problem-text">
+                                    <h3>Déjeuner au bureau</h3>
+                                    <p>"Sandwich devant l'écran, en répondant aux emails. 
+                                    Pas le temps de souffler."</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="time-marker">19h00</div>
+                            <div class="problem-card">
+                                <div class="problem-icon">🏠</div>
+                                <div class="problem-text">
+                                    <h3>Rentrée tardive</h3>
+                                    <p>"Mes enfants étaient déjà couchés. J'avais l'impression 
+                                    de passer à côté de leur enfance."</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="time-marker">22h00</div>
+                            <div class="problem-card">
+                                <div class="problem-icon">😔</div>
+                                <div class="problem-text">
+                                    <h3>Épuisement total</h3>
+                                    <p>"Au lit, épuisée, en pensant déjà à la pile de dossiers 
+                                    qui m'attendait le lendemain."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="emotional-impact">
+                    <h3 class="impact-title">Les conséquences cachées</h3>
+                    <div class="impact-items">
+                        <div class="impact-item">
+                            <span class="impact-icon">💔</span>
+                            <span class="impact-text">Relations familiales tendues</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-icon">😴</span>
+                            <span class="impact-text">Troubles du sommeil</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-icon">🤯</span>
+                            <span class="impact-text">Stress chronique</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-icon">💸</span>
+                            <span class="impact-text">Coûts qui explosent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Story -->
+    <section id="transformation" class="section section--transformation">
+        <div class="container">
+            <div class="transformation-content">
+                <div class="transformation-intro">
+                    <h2 class="section__title">Puis Marie a découvert Seventee...</h2>
+                    <div class="transformation-quote">
+                        <div class="quote-text">
+                            "Au début, j'étais sceptique. Encore un outil qui promettait 
+                            de révolutionner notre métier. Mais Guillaume m'a expliqué 
+                            le concept, et j'ai accepté de tester."
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="before-after-comparison">
+                    <div class="comparison-side comparison-side--before">
+                        <h3 class="comparison-title">😰 AVANT Seventee</h3>
+                        <div class="comparison-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">60h</span>
+                                <span class="stat-label">de travail par semaine</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">dossiers à trier par annonce</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">80%</span>
+                                <span class="stat-label">du temps en tri administratif</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">450€</span>
+                                <span class="stat-label">de budget portails</span>
+                            </div>
+                        </div>
+                        <div class="emotional-state">
+                            <span class="emotional-icon">😩</span>
+                            <span class="emotional-text">Épuisée, stressée, déconnectée de sa famille</span>
+                        </div>
+                    </div>
+                    
+                    <div class="transformation-arrow">
+                        <span class="arrow-icon">✨</span>
+                        <span class="arrow-text">TRANSFORMATION</span>
+                    </div>
+                    
+                    <div class="comparison-side comparison-side--after">
+                        <h3 class="comparison-title">😊 APRÈS Seventee</h3>
+                        <div class="comparison-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">45h</span>
+                                <span class="stat-label">de travail par semaine</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">dossiers préqualifiés max</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">30%</span>
+                                <span class="stat-label">du temps en conseil client</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">225€</span>
+                                <span class="stat-label">de budget portails</span>
+                            </div>
+                        </div>
+                        <div class="emotional-state">
+                            <span class="emotional-icon">🌟</span>
+                            <span class="emotional-text">Sereine, épanouie, présente pour ses proches</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="transformation-story">
+                    <div class="story-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4 class="step-title">Première semaine : le test</h4>
+                            <p class="step-description">
+                                "Dès la première annonce publiée sur Seventee, j'ai reçu 
+                                exactement 3 candidatures. Toutes les trois parfaitement 
+                                adaptées au profil recherché."
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="story-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4 class="step-title">Premier mois : la révélation</h4>
+                            <p class="step-description">
+                                "J'ai pu partir à 17h30 pour aller chercher mes enfants à l'école. 
+                                La première fois depuis des mois. Mon mari n'en revenait pas."
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="story-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4 class="step-title">Après 3 mois : la transformation</h4>
+                            <p class="step-description">
+                                "Mon stress a complètement diminué. Je me concentre sur le conseil, 
+                                mon vrai métier. Et mes résultats n'ont jamais été aussi bons."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="temoignages" class="section section--emotional-testimonials">
+        <div class="container">
+            <h2 class="section__title">D'autres histoires comme celle de Marie</h2>
+            
+            <div class="emotional-testimonials">
+                <div class="testimonial-card testimonial-card--emotional">
+                    <div class="testimonial-story">
+                        <div class="testimonial-emotion">😌</div>
+                        <h3 class="testimonial-title">"Je dors enfin la nuit"</h3>
+                        <div class="testimonial-text">
+                            "Avant, je me réveillais à 3h du matin en pensant aux dossiers 
+                            en retard. Maintenant, je peux enfin me détendre le soir et 
+                            profiter de ma famille."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-details">
+                                <span class="author-name">Sophie Martin</span>
+                                <span class="author-title">Gérante, Régie Immobilière</span>
+                                <span class="author-location">Mère de 2 enfants</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-impact">
+                        <div class="impact-metric">
+                            <span class="metric-icon">⏰</span>
+                            <span class="metric-text">+2h par jour avec sa famille</span>
+                        </div>
+                        <div class="impact-metric">
+                            <span class="metric-icon">💚</span>
+                            <span class="metric-text">Stress divisé par 3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card testimonial-card--emotional">
+                    <div class="testimonial-story">
+                        <div class="testimonial-emotion">🎯</div>
+                        <h3 class="testimonial-title">"J'ai retrouvé la passion de mon métier"</h3>
+                        <div class="testimonial-text">
+                            "Je passais tellement de temps dans l'administratif que j'avais 
+                            oublié pourquoi j'aimais l'immobilier. Maintenant, je peux 
+                            vraiment conseiller mes clients."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-details">
+                                <span class="author-name">Pierre Leblanc</span>
+                                <span class="author-title">Agent immobilier</span>
+                                <span class="author-location">15 ans d'expérience</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-impact">
+                        <div class="impact-metric">
+                            <span class="metric-icon">💼</span>
+                            <span class="metric-text">+40% de temps conseil</span>
+                        </div>
+                        <div class="impact-metric">
+                            <span class="metric-icon">⭐</span>
+                            <span class="metric-text">Satisfaction client à 98%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card testimonial-card--emotional">
+                    <div class="testimonial-story">
+                        <div class="testimonial-emotion">🌟</div>
+                        <h3 class="testimonial-title">"Mes équipes sont transformées"</h3>
+                        <div class="testimonial-text">
+                            "L'ambiance au bureau a complètement changé. Plus de course 
+                            contre la montre, plus de stress. Mes collaborateurs sont 
+                            motivés et épanouis."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-details">
+                                <span class="author-name">Jean Dupont</span>
+                                <span class="author-title">Directeur</span>
+                                <span class="author-location">Groupe Gerim, 25 collaborateurs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-impact">
+                        <div class="impact-metric">
+                            <span class="metric-icon">👥</span>
+                            <span class="metric-text">0% de turnover depuis 6 mois</span>
+                        </div>
+                        <div class="impact-metric">
+                            <span class="metric-icon">📈</span>
+                            <span class="metric-text">+25% de rentabilité</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Story Starts Here -->
+    <section id="votre-histoire" class="section section--your-story">
+        <div class="container">
+            <div class="your-story-content">
+                <h2 class="section__title">Votre histoire commence ici</h2>
+                <div class="story-invitation">
+                    <div class="invitation-text">
+                        <p class="invitation-question">
+                            Et si, dans 3 mois, vous pouviez dire la même chose que Marie ?
+                        </p>
+                        <p class="invitation-vision">
+                            Imaginez-vous rentrant chez vous à 18h, détendu(e), 
+                            avec l'esprit libre pour profiter de vos proches...
+                        </p>
+                    </div>
+                    
+                    <div class="future-you">
+                        <div class="future-scene">
+                            <div class="scene-icon">🏠</div>
+                            <div class="scene-text">
+                                <h3>Votre nouveau quotidien</h3>
+                                <ul class="scene-benefits">
+                                    <li>✨ Journées sereines et organisées</li>
+                                    <li>👨‍👩‍👧‍👦 Temps de qualité avec votre famille</li>
+                                    <li>🎯 Focus sur votre expertise métier</li>
+                                    <li>💤 Sommeil réparateur et repos mérité</li>
+                                    <li>📈 Résultats business en amélioration</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-cta">
+                    <div class="cta-emotion">
+                        <span class="cta-heart">💙</span>
+                        <span class="cta-text">Vous méritez cette transformation</span>
+                    </div>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn--emotional btn--large">
+                            <span class="btn__icon">🌟</span>
+                            Commencer ma transformation
+                        </a>
+                        <a href="tel:0603171747" class="btn btn--outline btn--large">
+                            <span class="btn__icon">💬</span>
+                            Parler à Guillaume
+                        </a>
+                    </div>
+                    
+                    <div class="cta-reassurance">
+                        <div class="reassurance-item">
+                            <span class="reassurance-icon">🤝</span>
+                            <span class="reassurance-text">Accompagnement personnalisé</span>
+                        </div>
+                        <div class="reassurance-item">
+                            <span class="reassurance-icon">💯</span>
+                            <span class="reassurance-text">Résultats garantis</span>
+                        </div>
+                        <div class="reassurance-item">
+                            <span class="reassurance-icon">💙</span>
+                            <span class="reassurance-text">Équipe qui vous comprend</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section--contact-story">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-story">
+                    <h2 class="contact-title">Racontez-nous votre histoire</h2>
+                    <p class="contact-description">
+                        Guillaume prend le temps d'écouter votre situation personnelle 
+                        et vous accompagne vers votre transformation.
+                    </p>
+                    
+                    <div class="guillaume-intro">
+                        <div class="guillaume-photo">
+                            <div class="photo-placeholder">
+                                <span class="photo-initials">GD</span>
+                            </div>
+                        </div>
+                        <div class="guillaume-story">
+                            <h3>Guillaume comprend</h3>
+                            <p>
+                                "J'ai créé Seventee parce que j'ai vu trop de professionnels 
+                                talentueux s'épuiser dans des tâches qui les éloignaient 
+                                de leur passion."
+                            </p>
+                            <div class="guillaume-mission">
+                                <span class="mission-icon">💙</span>
+                                <span class="mission-text">Ma mission : vous redonner l'amour de votre métier</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form class="story-form">
+                        <div class="form-header">
+                            <span class="form-icon">💬</span>
+                            <span class="form-title">Partagez votre situation</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Votre prénom *</label>
+                            <input type="text" name="name" class="form-input" placeholder="Comment puis-je vous appeler ?" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Votre agence *</label>
+                            <input type="text" name="company" class="form-input" placeholder="Le nom de votre agence" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Comment vous joindre ? *</label>
+                            <input type="email" name="email" class="form-input" placeholder="Votre email professionnel" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Votre numéro de téléphone</label>
+                            <input type="tel" name="phone" class="form-input" placeholder="Pour un échange plus personnel">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Votre principale difficulté aujourd'hui</label>
+                            <textarea name="challenge" class="form-textarea" rows="3" placeholder="Décrivez en quelques mots ce qui vous pose le plus de problèmes au quotidien..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--emotional btn--large btn--full">
+                            <span class="btn__icon">💙</span>
+                            Parler à Guillaume
+                        </button>
+                        
+                        <div class="form-promise">
+                            <div class="promise-item">
+                                <span class="promise-icon">⏰</span>
+                                <span class="promise-text">Réponse personnalisée sous 2h</span>
+                            </div>
+                            <div class="promise-item">
+                                <span class="promise-icon">🤝</span>
+                                <span class="promise-text">Échange bienveillant et sans jugement</span>
+                            </div>
+                            <div class="promise-item">
+                                <span class="promise-icon">🔒</span>
+                                <span class="promise-text">Confidentialité absolue</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <img src="Ressources/Seventee_Logo_White_Green_RVB_resized.png" alt="Seventee" class="footer__logo">
+                    <p>Parce que vous méritez de retrouver l'amour de votre métier</p>
+                    <div class="footer-heart">
+                        <span class="heart-icon">💙</span>
+                        <span class="heart-text">Fait avec cœur à Lyon</span>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4>Histoires</h4>
+                        <ul>
+                            <li><a href="#histoire">L'histoire de Marie</a></li>
+                            <li><a href="#temoignages">Autres témoignages</a></li>
+                            <li><a href="#votre-histoire">Votre histoire</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Transformation</h4>
+                        <ul>
+                            <li><a href="#transformation">Comment ça marche</a></li>
+                            <li><a href="#contact">Accompagnement</a></li>
+                            <li><a href="#results">Résultats</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Contact humain</h4>
+                        <ul>
+                            <li><a href="tel:0603171747">06 03 17 17 47</a></li>
+                            <li><a href="mailto:guillaume.deslandes@seventee.com">Guillaume</a></li>
+                            <li><a href="https://linkedin.com/company/seventee" target="_blank">Notre histoire</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script-g.js"></script>
+</body>
+</html>

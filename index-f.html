@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seventee - Calculez vos économies : ROI garanti ou remboursé</title>
+    <meta name="description" content="Calculateur ROI Seventee. Découvrez exactement combien vous économiserez. Rentabilisé dès le 3ème mois garanti.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seventee.com/">
+    <meta property="og:title" content="Seventee - ROI garanti ou remboursé">
+    <meta property="og:description" content="Calculez vos économies exactes avec notre outil. ROI positif dès le 3ème mois.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="Ressources/Seventee_Logo_Black_Green_RVB.svg">
+    <link rel="icon" type="image/png" href="Ressources/Seventee_Logo_White_Green_RVB_resized.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles-f.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__brand">
+                    <img src="Ressources/Seventee_Logo_Black_Green_RVB.svg" alt="Seventee" class="header__logo">
+                    <div class="roi-badge">
+                        <span class="roi-badge__icon">📊</span>
+                        <span class="roi-badge__text">ROI Garanti</span>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <a href="#calculateur" class="nav__link">Calculateur</a>
+                    <a href="#roi" class="nav__link">ROI</a>
+                    <a href="#garantie" class="nav__link">Garantie</a>
+                    <div class="version-switcher">
+                        <select id="versionSelect" class="version-select" onchange="switchVersion(this.value)">
+                            <option value="index.html">Version A</option>
+                            <option value="index-alt.html">Version B</option>
+                            <option value="index-v3.html">Version C</option>
+                            <option value="index-d.html">Version D</option>
+                            <option value="index-e.html">Version E</option>
+                            <option value="index-f.html" selected>Version F</option>
+                            <option value="index-g.html">Version G</option>
+                            <option value="index-h.html">Version H</option>
+                            <option value="compare.html">Comparer toutes</option>
+                        </select>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - ROI FOCUS -->
+    <section id="hero" class="hero hero--roi">
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__text">
+                    <div class="roi-guarantee">
+                        <span class="guarantee-icon">💰</span>
+                        <span class="guarantee-text">ROI GARANTI OU REMBOURSÉ</span>
+                    </div>
+                    
+                    <h1 class="hero__title">
+                        Calculez exactement combien <span class="highlight">vous économiserez</span> avec Seventee
+                    </h1>
+                    
+                    <p class="hero__subtitle">
+                        Notre outil de calcul vous donne le montant précis de vos économies mensuelles et annuelles. 
+                        <strong>100% transparent, 100% garanti.</strong>
+                    </p>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">mois pour être rentabilisé</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">187%</span>
+                            <span class="stat-label">ROI moyen sur 12 mois</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">remboursé si non rentable</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero__calculator">
+                    <!-- Interactive Calculator -->
+                    <div class="calculator-widget">
+                        <h3 class="calculator-title">🧮 Calculateur d'économies</h3>
+                        <div class="calculator-form">
+                            <div class="input-group">
+                                <label class="input-label">Nombre d'annonces de location par mois</label>
+                                <input type="range" id="propertiesSlider" min="1" max="50" value="10" class="slider">
+                                <div class="slider-value"><span id="propertiesValue">10</span> annonces/mois</div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label class="input-label">Budget actuel portails immobiliers</label>
+                                <input type="range" id="budgetSlider" min="100" max="1000" value="400" step="50" class="slider">
+                                <div class="slider-value"><span id="budgetValue">400</span>€/mois</div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label class="input-label">Temps moyen de tri par annonce</label>
+                                <input type="range" id="timeSlider" min="1" max="10" value="5" step="0.5" class="slider">
+                                <div class="slider-value"><span id="timeValue">5</span> heures</div>
+                            </div>
+                        </div>
+                        
+                        <div class="calculator-results">
+                            <div class="result-section">
+                                <h4 class="result-title">💰 Vos économies avec Seventee</h4>
+                                <div class="result-item">
+                                    <span class="result-label">Économies portails :</span>
+                                    <span class="result-value" id="portalSavings">200€/mois</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Économies temps (35€/h) :</span>
+                                    <span class="result-value" id="timeSavings">1,750€/mois</span>
+                                </div>
+                                <div class="result-item result-item--total">
+                                    <span class="result-label">Total économies :</span>
+                                    <span class="result-value" id="totalSavings">1,950€/mois</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Coût Seventee :</span>
+                                    <span class="result-value cost" id="seventeeCost">-299€/mois</span>
+                                </div>
+                                <div class="result-item result-item--profit">
+                                    <span class="result-label">BÉNÉFICE NET :</span>
+                                    <span class="result-value profit" id="netProfit">+1,651€/mois</span>
+                                </div>
+                            </div>
+                            
+                            <div class="roi-section">
+                                <div class="roi-metric">
+                                    <span class="roi-label">ROI :</span>
+                                    <span class="roi-value" id="roiPercentage">552%</span>
+                                </div>
+                                <div class="payback-metric">
+                                    <span class="payback-label">Rentabilisé en :</span>
+                                    <span class="payback-value" id="paybackTime">0.2 mois</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Guarantee Section -->
+    <section id="garantie" class="section section--guarantee">
+        <div class="container">
+            <div class="guarantee-content">
+                <h2 class="section__title">🛡️ Notre garantie ROI</h2>
+                <div class="guarantee-grid">
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon">📊</div>
+                        <h3>Calcul transparent</h3>
+                        <p>Méthodologie de calcul validée par un expert-comptable. Tous les chiffres sont vérifiables.</p>
+                    </div>
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon">⏱️</div>
+                        <h3>ROI sous 3 mois</h3>
+                        <p>Si votre investissement n'est pas rentabilisé au bout de 3 mois, nous vous remboursons intégralement.</p>
+                    </div>
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon">💳</div>
+                        <h3>Remboursement total</h3>
+                        <p>100% de vos frais remboursés si vous n'atteignez pas le ROI calculé dans les délais annoncés.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Breakdown -->
+    <section id="roi" class="section section--breakdown">
+        <div class="container">
+            <h2 class="section__title">📋 Analyse détaillée des coûts</h2>
+            <div class="breakdown-comparison">
+                <div class="breakdown-column breakdown-column--current">
+                    <h3 class="breakdown-title">💸 Votre situation actuelle</h3>
+                    <div class="cost-items">
+                        <div class="cost-item">
+                            <span class="cost-label">Leboncoin Pro</span>
+                            <span class="cost-value">150€/mois</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="cost-label">SeLoger</span>
+                            <span class="cost-value">180€/mois</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="cost-label">Bien'ici</span>
+                            <span class="cost-value">120€/mois</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="cost-label">Temps de tri (50h × 35€)</span>
+                            <span class="cost-value">1,750€/mois</span>
+                        </div>
+                        <div class="cost-total">
+                            <span class="cost-label"><strong>Total mensuel</strong></span>
+                            <span class="cost-value"><strong>2,200€/mois</strong></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="breakdown-column breakdown-column--seventee">
+                    <h3 class="breakdown-title">💰 Avec Seventee</h3>
+                    <div class="cost-items">
+                        <div class="cost-item cost-item--reduced">
+                            <span class="cost-label">Portails (réduction 50%)</span>
+                            <span class="cost-value">225€/mois</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="cost-label">Seventee</span>
+                            <span class="cost-value">299€/mois</span>
+                        </div>
+                        <div class="cost-item cost-item--eliminated">
+                            <span class="cost-label">Temps de tri (90% réduit)</span>
+                            <span class="cost-value">175€/mois</span>
+                        </div>
+                        <div class="cost-saving">
+                            <span class="cost-label">Économies formation</span>
+                            <span class="cost-value">-50€/mois</span>
+                        </div>
+                        <div class="cost-total cost-total--savings">
+                            <span class="cost-label"><strong>Total mensuel</strong></span>
+                            <span class="cost-value"><strong>649€/mois</strong></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="breakdown-result">
+                    <div class="result-arrow">→</div>
+                    <div class="savings-highlight">
+                        <span class="savings-amount">1,551€</span>
+                        <span class="savings-label">d'économies/mois</span>
+                        <span class="savings-annual">18,612€/an</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section id="case-studies" class="section section--cases">
+        <div class="container">
+            <h2 class="section__title">📈 Études de cas réels</h2>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3 class="case-title">Agence Partenaire</h3>
+                        <div class="case-size">15 annonces/mois</div>
+                    </div>
+                    <div class="case-metrics">
+                        <div class="case-metric">
+                            <span class="metric-label">Économies/mois :</span>
+                            <span class="metric-value">1,247€</span>
+                        </div>
+                        <div class="case-metric">
+                            <span class="metric-label">ROI :</span>
+                            <span class="metric-value">417%</span>
+                        </div>
+                        <div class="case-metric">
+                            <span class="metric-label">Rentabilisé en :</span>
+                            <span class="metric-value">2.4 mois</span>
+                        </div>
+                    </div>
+                    <div class="case-quote">
+                        "Le ROI a dépassé nos prévisions. L'investissement était rentabilisé avant même la fin du premier trimestre."
+                    </div>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3 class="case-title">Régie Immobilière</h3>
+                        <div class="case-size">8 annonces/mois</div>
+                    </div>
+                    <div class="case-metrics">
+                        <div class="case-metric">
+                            <span class="metric-label">Économies/mois :</span>
+                            <span class="metric-value">892€</span>
+                        </div>
+                        <div class="case-metric">
+                            <span class="metric-label">ROI :</span>
+                            <span class="metric-value">298%</span>
+                        </div>
+                        <div class="case-metric">
+                            <span class="metric-label">Rentabilisé en :</span>
+                            <span class="metric-value">3.0 mois</span>
+                        </div>
+                    </div>
+                    <div class="case-quote">
+                        "Même avec un volume plus faible, les économies sont substantielles. Notre marge sur la location a considérablement augmenté."
+                    </div>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3 class="case-title">Groupe Gerim</h3>
+                        <div class="case-size">35 annonces/mois</div>
+                    </div>
+                    <div class="case-metrics">
+                        <div class="case-metric">
+                            <span class="metric-label">Économies/mois :</span>
+                            <span class="metric-value">2,840€</span>
+                        </div>
+                        <div class="case-metric">
+                            <span class="metric-label">ROI :</span>
+                            <span class="metric-value">950%</span>
+                        </div>
+                        <div class="case-metric">
+                            <span class="metric-label">Rentabilisé en :</span>
+                            <span class="metric-value">1.3 mois</span>
+                        </div>
+                    </div>
+                    <div class="case-quote">
+                        "À ce volume, Seventee devient un avantage concurrentiel majeur. Nos coûts opérationnels ont chuté drastiquement."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="demo" class="section section--cta-roi">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Prêt à voir votre ROI en action ?</h2>
+                <div class="cta-guarantee-visual">
+                    <div class="guarantee-seal">
+                        <span class="seal-icon">🏆</span>
+                        <span class="seal-text">ROI GARANTI</span>
+                        <span class="seal-subtitle">ou remboursé à 100%</span>
+                    </div>
+                </div>
+                <p class="cta-subtitle">
+                    Demandez votre analyse personnalisée avec calculs détaillés 
+                    basés sur vos chiffres réels.
+                </p>
+                
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn--primary btn--large">
+                        <span class="btn__icon">📊</span>
+                        Analyse ROI personnalisée
+                    </a>
+                    <a href="tel:0603171747" class="btn btn--outline btn--large">
+                        <span class="btn__icon">📞</span>
+                        Parler à un expert
+                    </a>
+                </div>
+                
+                <div class="cta-guarantee-text">
+                    ✅ Analyse gratuite • ✅ Calculs certifiés • ✅ Garantie satisfait ou remboursé
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="section section--contact-roi">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="contact-title">📊 Analyse ROI personnalisée</h2>
+                    <p class="contact-description">
+                        Obtenez vos calculs exacts basés sur vos données réelles. 
+                        Rapport détaillé envoyé sous 24h.
+                    </p>
+                    
+                    <div class="contact-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">📈</span>
+                            <span class="benefit-text">Analyse complète de vos coûts actuels</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">💰</span>
+                            <span class="benefit-text">Projection ROI sur 12 mois</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">📋</span>
+                            <span class="benefit-text">Plan d'implémentation détaillé</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🎯</span>
+                            <span class="benefit-text">Objectifs de rentabilité personnalisés</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form class="roi-form">
+                        <div class="form-header">
+                            <span class="form-icon">🧮</span>
+                            <span class="form-title">Données pour calcul ROI</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Nom complet *</label>
+                            <input type="text" name="name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Agence *</label>
+                            <input type="text" name="company" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Email professionnel *</label>
+                            <input type="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Téléphone</label>
+                            <input type="tel" name="phone" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Annonces de location par mois *</label>
+                            <select name="properties" class="form-select" required>
+                                <option value="">Sélectionnez</option>
+                                <option value="1-5">1 à 5 annonces</option>
+                                <option value="6-15">6 à 15 annonces</option>
+                                <option value="16-30">16 à 30 annonces</option>
+                                <option value="30+">Plus de 30 annonces</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Budget actuel portails immobiliers *</label>
+                            <select name="budget" class="form-select" required>
+                                <option value="">Sélectionnez</option>
+                                <option value="0-200">0 à 200€/mois</option>
+                                <option value="200-500">200 à 500€/mois</option>
+                                <option value="500-1000">500 à 1000€/mois</option>
+                                <option value="1000+">Plus de 1000€/mois</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--large btn--full">
+                            <span class="btn__icon">📊</span>
+                            Recevoir mon analyse ROI
+                        </button>
+                        
+                        <div class="form-guarantee">
+                            🔒 Analyse gratuite • Rapport sous 24h • Données confidentielles
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <img src="Ressources/Seventee_Logo_White_Green_RVB_resized.png" alt="Seventee" class="footer__logo">
+                    <p>ROI garanti ou remboursé à 100%</p>
+                    <div class="footer-guarantee">
+                        <span class="guarantee-badge">🛡️ Garantie ROI</span>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4>Calculateurs</h4>
+                        <ul>
+                            <li><a href="#calculateur">ROI Calculateur</a></li>
+                            <li><a href="#contact">Analyse personnalisée</a></li>
+                            <li><a href="#case-studies">Études de cas</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Garanties</h4>
+                        <ul>
+                            <li><a href="#garantie">ROI garanti</a></li>
+                            <li><a href="#legal">Conditions</a></li>
+                            <li><a href="#methodology">Méthodologie</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="tel:0603171747">06 03 17 17 47</a></li>
+                            <li><a href="mailto:guillaume.deslandes@seventee.com">Email</a></li>
+                            <li><a href="https://linkedin.com/company/seventee" target="_blank">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script-f.js"></script>
+</body>
+</html>

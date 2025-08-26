@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seventee - Offre limitée : Plus que 5 places disponibles !</title>
+    <meta name="description" content="Accès anticipé à Seventee pour 5 agences seulement. Offre limitée jusqu'au 31 juillet 2025.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seventee.com/">
+    <meta property="og:title" content="Seventee - Offre limitée : Plus que 5 places !">
+    <meta property="og:description" content="Dernière chance de rejoindre les agences privilégiées avant l'ouverture générale.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="Ressources/Seventee_Logo_Black_Green_RVB.svg">
+    <link rel="icon" type="image/png" href="Ressources/Seventee_Logo_White_Green_RVB_resized.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles-e.css">
+</head>
+<body>
+    <!-- Urgency Bar -->
+    <div class="urgency-bar">
+        <div class="container">
+            <div class="urgency-content">
+                <span class="urgency-icon">⚡</span>
+                <span class="urgency-text">
+                    <strong>OFFRE LIMITÉE :</strong> Plus que <span id="remainingSpots" class="urgency-number">5</span> places disponibles
+                </span>
+                <div class="urgency-timer" id="countdownTimer">
+                    <span class="timer-label">Se termine dans :</span>
+                    <div class="timer-digits">
+                        <span id="days">15</span>j
+                        <span id="hours">12</span>h
+                        <span id="minutes">45</span>m
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__brand">
+                    <img src="Ressources/Seventee_Logo_Black_Green_RVB.svg" alt="Seventee" class="header__logo">
+                    <div class="exclusivity-badge">
+                        <span class="exclusivity-badge__icon">🔥</span>
+                        <span class="exclusivity-badge__text">Accès anticipé</span>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <a href="#offre" class="nav__link">L'offre</a>
+                    <a href="#avantages" class="nav__link">Avantages exclusifs</a>
+                    <a href="#reservation" class="nav__link nav__link--urgent">Réserver ma place</a>
+                    <div class="version-switcher">
+                        <select id="versionSelect" class="version-select" onchange="switchVersion(this.value)">
+                            <option value="index.html">Version A</option>
+                            <option value="index-alt.html">Version B</option>
+                            <option value="index-v3.html">Version C</option>
+                            <option value="index-d.html">Version D</option>
+                            <option value="index-e.html" selected>Version E</option>
+                            <option value="index-f.html">Version F</option>
+                            <option value="index-g.html">Version G</option>
+                            <option value="index-h.html">Version H</option>
+                            <option value="compare.html">Comparer toutes</option>
+                        </select>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - URGENCE -->
+    <section id="hero" class="hero hero--urgency">
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__text">
+                    <div class="scarcity-alert">
+                        <span class="alert-icon">🚨</span>
+                        <span class="alert-text">DERNIÈRE CHANCE</span>
+                    </div>
+                    
+                    <h1 class="hero__title">
+                        Ne ratez pas votre place parmi les 
+                        <span class="highlight">5 dernières agences privilégiées</span>
+                    </h1>
+                    
+                    <p class="hero__subtitle">
+                        L'accès anticipé à Seventee se termine le <strong>31 juillet 2025</strong>. 
+                        Après cette date, vous devrez attendre l'ouverture générale et payer le tarif standard.
+                    </p>
+
+                    <!-- Countdown -->
+                    <div class="countdown-section">
+                        <div class="countdown-title">⏰ Offre valable encore :</div>
+                        <div class="countdown-display" id="mainCountdown">
+                            <div class="countdown-block">
+                                <span class="countdown-number" id="countdownDays">15</span>
+                                <span class="countdown-label">Jours</span>
+                            </div>
+                            <div class="countdown-block">
+                                <span class="countdown-number" id="countdownHours">12</span>
+                                <span class="countdown-label">Heures</span>
+                            </div>
+                            <div class="countdown-block">
+                                <span class="countdown-number" id="countdownMinutes">45</span>
+                                <span class="countdown-label">Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scarcity indicators -->
+                    <div class="scarcity-indicators">
+                        <div class="scarcity-item">
+                            <span class="scarcity-icon">👥</span>
+                            <span class="scarcity-text">Plus que <strong id="spotsLeft">5 places</strong> disponibles</span>
+                        </div>
+                        <div class="scarcity-item">
+                            <span class="scarcity-icon">💰</span>
+                            <span class="scarcity-text"><strong>-50% sur les 6 premiers mois</strong></span>
+                        </div>
+                        <div class="scarcity-item">
+                            <span class="scarcity-icon">🏆</span>
+                            <span class="scarcity-text">Statut <strong>"Partenaire Fondateur"</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="hero__cta">
+                        <a href="#reservation" class="btn btn--urgent btn--large btn--pulse">
+                            <span class="btn__icon">⚡</span>
+                            Réserver ma place maintenant
+                        </a>
+                        <div class="cta-urgency">
+                            <span class="urgency-reminder">🔥 <strong>3 agences</strong> ont réservé leur place cette semaine</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero__visual">
+                    <div class="exclusivity-preview">
+                        <div class="exclusive-card">
+                            <div class="exclusive-badge">
+                                <span class="exclusive-badge__icon">⭐</span>
+                                <span class="exclusive-badge__text">ACCÈS EXCLUSIF</span>
+                            </div>
+                            <h3 class="exclusive-title">Ce que vous obtenez :</h3>
+                            <ul class="exclusive-benefits">
+                                <li>
+                                    <span class="benefit-icon">✅</span>
+                                    <span class="benefit-text">6 mois à <strong>-50%</strong></span>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">✅</span>
+                                    <span class="benefit-text">Formation prioritaire</span>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">✅</span>
+                                    <span class="benefit-text">Support dédié</span>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">✅</span>
+                                    <span class="benefit-text">Badge "Partenaire Fondateur"</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="exclusive-price">
+                                <span class="price-label">Au lieu de :</span>
+                                <span class="price-original">299€/mois</span>
+                                <span class="price-current">149€/mois</span>
+                                <span class="price-duration">pendant 6 mois</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Now Section -->
+    <section id="why-now" class="section section--why-now">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Pourquoi maintenant ?</h2>
+                <p class="section__subtitle">L'opportunité ne se représentera pas avant longtemps</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item timeline-item--past">
+                    <div class="timeline-marker timeline-marker--past">✅</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Phase 1 : Développement</h3>
+                        <p class="timeline-description">18 mois de R&D avec les premières agences pilotes</p>
+                        <span class="timeline-date">Jan 2023 - Juin 2024</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-item--current">
+                    <div class="timeline-marker timeline-marker--current">🔥</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Phase 2 : Accès anticipé (MAINTENANT)</h3>
+                        <p class="timeline-description">Offre limitée à 5 agences privilégiées avec conditions exceptionnelles</p>
+                        <span class="timeline-date">Jusqu'au 31 juillet 2025</span>
+                        <div class="timeline-urgency">VOUS ÊTES ICI - Plus que <span id="timelineSpots">5 places</span></div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-item--future">
+                    <div class="timeline-marker timeline-marker--future">⏳</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Phase 3 : Ouverture générale</h3>
+                        <p class="timeline-description">Tarifs standards, pas de conditions préférentielles, liste d'attente</p>
+                        <span class="timeline-date">Septembre 2025</span>
+                        <div class="timeline-warning">⚠️ Prix standard : 299€/mois sans avantages</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exclusive Benefits -->
+    <section id="avantages" class="section section--exclusive-benefits">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Avantages exclusifs "Partenaire Fondateur"</h2>
+                <p class="section__subtitle">Ces avantages ne seront plus jamais proposés</p>
+            </div>
+            
+            <div class="benefits-comparison">
+                <div class="comparison-table">
+                    <div class="comparison-header">
+                        <div class="comparison-col comparison-col--feature">Avantages</div>
+                        <div class="comparison-col comparison-col--standard">
+                            <div class="plan-name">Standard</div>
+                            <div class="plan-subtitle">Dès septembre 2025</div>
+                        </div>
+                        <div class="comparison-col comparison-col--exclusive">
+                            <div class="plan-name">Fondateur</div>
+                            <div class="plan-subtitle">Uniquement maintenant</div>
+                            <div class="plan-badge">LIMITÉ</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="feature-name">Prix mensuel</div>
+                        <div class="feature-standard">299€/mois</div>
+                        <div class="feature-exclusive">
+                            <span class="price-strike">299€</span>
+                            <strong>149€/mois</strong>
+                            <span class="discount-badge">-50%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="feature-name">Formation incluse</div>
+                        <div class="feature-standard">Formation standard</div>
+                        <div class="feature-exclusive">
+                            <strong>Formation VIP</strong>
+                            <span class="exclusive-icon">👑</span>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="feature-name">Support client</div>
+                        <div class="feature-standard">Email uniquement</div>
+                        <div class="feature-exclusive">
+                            <strong>Ligne directe</strong>
+                            <span class="exclusive-icon">📞</span>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="feature-name">Nouvelles fonctionnalités</div>
+                        <div class="feature-standard">Accès standard</div>
+                        <div class="feature-exclusive">
+                            <strong>Accès prioritaire</strong>
+                            <span class="exclusive-icon">🚀</span>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="feature-name">Badge de reconnaissance</div>
+                        <div class="feature-standard">❌</div>
+                        <div class="feature-exclusive">
+                            <strong>"Partenaire Fondateur"</strong>
+                            <span class="exclusive-icon">🏆</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof with Urgency -->
+    <section id="proof" class="section section--urgent-proof">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Ils ont déjà réservé leur place</h2>
+                <p class="section__subtitle">Ne soyez pas le dernier à en profiter</p>
+            </div>
+            
+            <div class="urgent-testimonials">
+                <div class="testimonial-urgent">
+                    <div class="testimonial-quote">
+                        "J'ai hésité 2 jours et j'ai failli rater l'offre. Heureusement que Guillaume m'a rappelé !"
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Marie D.</strong> - Agence Partenaire
+                        <span class="booking-time">Réservé il y a 3 jours</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-urgent">
+                    <div class="testimonial-quote">
+                        "Quand j'ai vu qu'il ne restait que 8 places, j'ai réservé immédiatement. Meilleure décision !"
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Pierre L.</strong> - Groupe Gerim
+                        <span class="booking-time">Réservé il y a 1 semaine</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-urgent">
+                    <div class="testimonial-quote">
+                        "L'économie de 150€/mois pendant 6 mois m'a convaincu. 900€ d'économies, c'est énorme !"
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Sophie M.</strong> - Régie Immobilière
+                        <span class="booking-time">Réservé il y a 2 jours</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="live-activity">
+                <div class="activity-header">
+                    <span class="activity-icon">🔴</span>
+                    <span class="activity-title">Activité en temps réel</span>
+                </div>
+                <div class="activity-feed" id="activityFeed">
+                    <div class="activity-item">
+                        <span class="activity-time">Il y a 23 minutes</span>
+                        <span class="activity-text">Agence du Centre (Lyon 2ème) a réservé sa place</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-time">Il y a 1 heure</span>
+                        <span class="activity-text">Jean D. consulte actuellement cette page</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-time">Il y a 2 heures</span>
+                        <span class="activity-text">Régie Presqu'île (Lyon 1er) a demandé plus d'infos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="section section--reservation">
+        <div class="container">
+            <div class="reservation-content">
+                <div class="reservation-header">
+                    <h2 class="reservation-title">
+                        🔥 Réservez votre place maintenant
+                    </h2>
+                    <div class="reservation-urgency">
+                        <div class="urgency-item">
+                            <span class="urgency-icon">⏰</span>
+                            <span class="urgency-text">Plus que <span id="formSpots">5</span> places</span>
+                        </div>
+                        <div class="urgency-item">
+                            <span class="urgency-icon">📅</span>
+                            <span class="urgency-text">Offre expire dans <span id="formTimer">15j 12h</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reservation-form-container">
+                    <form class="reservation-form" id="urgentForm">
+                        <div class="form-urgency-header">
+                            <span class="form-urgency-icon">⚡</span>
+                            <span class="form-urgency-text">Réservation express - 2 minutes</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="urgentName" class="form-label">Nom complet *</label>
+                            <input type="text" id="urgentName" name="name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="urgentCompany" class="form-label">Nom de l'agence *</label>
+                            <input type="text" id="urgentCompany" name="company" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="urgentEmail" class="form-label">Email professionnel *</label>
+                            <input type="email" id="urgentEmail" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="urgentPhone" class="form-label">Téléphone *</label>
+                            <input type="tel" id="urgentPhone" name="phone" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="urgentProperties" class="form-label">Nombre d'annonces/mois</label>
+                            <select id="urgentProperties" name="properties" class="form-select">
+                                <option value="">Sélectionnez</option>
+                                <option value="1-5">1 à 5 annonces</option>
+                                <option value="6-15">6 à 15 annonces</option>
+                                <option value="16-30">16 à 30 annonces</option>
+                                <option value="30+">Plus de 30 annonces</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--urgent btn--large btn--full btn--pulse">
+                            <span class="btn__icon">🚀</span>
+                            RÉSERVER MA PLACE MAINTENANT
+                        </button>
+                        
+                        <div class="form-guarantees">
+                            <div class="guarantee">
+                                <span class="guarantee-icon">✅</span>
+                                <span class="guarantee-text">Réservation sans engagement</span>
+                            </div>
+                            <div class="guarantee">
+                                <span class="guarantee-icon">📞</span>
+                                <span class="guarantee-text">Appel de confirmation sous 1h</span>
+                            </div>
+                            <div class="guarantee">
+                                <span class="guarantee-icon">🔒</span>
+                                <span class="guarantee-text">Votre place garantie</span>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="reservation-sidebar">
+                        <div class="savings-calculator">
+                            <h3 class="calculator-title">💰 Vos économies</h3>
+                            <div class="savings-item">
+                                <span class="savings-label">Prix standard :</span>
+                                <span class="savings-value">299€ × 6 mois = 1 794€</span>
+                            </div>
+                            <div class="savings-item">
+                                <span class="savings-label">Prix Fondateur :</span>
+                                <span class="savings-value">149€ × 6 mois = 894€</span>
+                            </div>
+                            <div class="savings-total">
+                                <span class="savings-label">Économies totales :</span>
+                                <span class="savings-amount">900€</span>
+                            </div>
+                            <div class="savings-note">
+                                + Avantages exclusifs inclus (valeur : 500€)
+                            </div>
+                        </div>
+                        
+                        <div class="contact-urgent">
+                            <h3 class="contact-title">📞 Besoin d'aide ?</h3>
+                            <p class="contact-description">
+                                Guillaume répond personnellement pour vous aider à réserver votre place.
+                            </p>
+                            <a href="tel:0603171747" class="btn btn--outline btn--full">
+                                Appeler Guillaume maintenant
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <img src="Ressources/Seventee_Logo_White_Green_RVB_resized.png" alt="Seventee" class="footer__logo">
+                    <p>L'opportunité exclusive se termine bientôt</p>
+                    <div class="footer-countdown">
+                        <span class="countdown-label">Plus que :</span>
+                        <span id="footerCountdown" class="countdown-value">15j 12h 45m</span>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4>Offre exclusive</h4>
+                        <ul>
+                            <li><a href="#reservation">Réserver ma place</a></li>
+                            <li><a href="tel:0603171747">Appeler maintenant</a></li>
+                            <li><a href="#avantages">Voir les avantages</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Informations</h4>
+                        <ul>
+                            <li><a href="#why-now">Pourquoi maintenant ?</a></li>
+                            <li><a href="#proof">Témoignages</a></li>
+                            <li><a href="#legal">Conditions de l'offre</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Contact urgence</h4>
+                        <ul>
+                            <li><a href="tel:0603171747">06 03 17 17 47</a></li>
+                            <li><a href="mailto:guillaume.deslandes@seventee.com">Email</a></li>
+                            <li><a href="https://linkedin.com/company/seventee" target="_blank">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script-e.js"></script>
+</body>
+</html>
