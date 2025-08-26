@@ -287,14 +287,24 @@ document.addEventListener('DOMContentLoaded', function() {
     setupFormHandlers();
 });
 
-// Video placeholder click handlers
+// Video card click handlers
 document.addEventListener('DOMContentLoaded', function() {
-    const videoPlaceholders = document.querySelectorAll('.video-placeholder');
-    videoPlaceholders.forEach(placeholder => {
-        placeholder.addEventListener('click', function() {
+    const videoCards = document.querySelectorAll('.video-card');
+    videoCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const videoTitle = this.querySelector('h3, h4')?.textContent || 'Vidéo';
+            const videoType = this.classList.contains('video-card--main') ? 'démonstration' : 'témoignage';
+            
+            console.log('Video clicked:', videoTitle);
+            
             // Here you would typically open a video modal or redirect to video
-            console.log('Video clicked:', this.querySelector('h3, p').textContent);
-            alert('Vidéo de démonstration\n\nCette vidéo sera bientôt disponible !');
+            alert(`${videoType.charAt(0).toUpperCase() + videoType.slice(1)} : ${videoTitle}\n\nCette vidéo sera bientôt disponible !`);
+            
+            // Track video click
+            trackEvent('video_clicked', { 
+                video_type: videoType,
+                video_title: videoTitle 
+            });
         });
     });
 });
