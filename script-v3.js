@@ -294,16 +294,23 @@ document.addEventListener('DOMContentLoaded', function() {
         card.addEventListener('click', function() {
             const videoTitle = this.querySelector('h3, h4')?.textContent || 'Vidéo';
             const videoType = this.classList.contains('video-card--main') ? 'démonstration' : 'témoignage';
+            const videoUrl = this.getAttribute('data-video-url');
             
             console.log('Video clicked:', videoTitle);
             
-            // Here you would typically open a video modal or redirect to video
-            alert(`${videoType.charAt(0).toUpperCase() + videoType.slice(1)} : ${videoTitle}\n\nCette vidéo sera bientôt disponible !`);
+            // If video has a URL, open it in new tab
+            if (videoUrl) {
+                window.open(videoUrl, '_blank');
+            } else {
+                // Fallback for videos without URL
+                alert(`${videoType.charAt(0).toUpperCase() + videoType.slice(1)} : ${videoTitle}\n\nCette vidéo sera bientôt disponible !`);
+            }
             
             // Track video click
             trackEvent('video_clicked', { 
                 video_type: videoType,
-                video_title: videoTitle 
+                video_title: videoTitle,
+                video_url: videoUrl || 'none'
             });
         });
     });
