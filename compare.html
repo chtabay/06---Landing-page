@@ -21,6 +21,7 @@
         <div class="compare-controls">
             <a href="index.html" class="btn btn--outline">Retour à la version A</a>
             <a href="index-alt.html" class="btn btn--outline">Aller à la version B</a>
+            <a href="index-v3.html" class="btn btn--outline">Aller à la version C</a>
         </div>
         <div class="compare-grid">
             <div class="compare-panel">
@@ -28,6 +29,7 @@
                     <select id="leftVariant" class="compare-select">
                         <option value="index.html">Version A (index.html)</option>
                         <option value="index-alt.html">Version B (index-alt.html)</option>
+                        <option value="index-v3.html">Version C (index-v3.html)</option>
                     </select>
                     <select id="leftSub" class="compare-select">
                         <option value="#top">Haut de page</option>
@@ -35,6 +37,11 @@
                         <option value="#agences">Section agences</option>
                         <option value="#comment-ca-marche">Comment ça marche</option>
                         <option value="#contact">Contact/Démo</option>
+                        <option value="#probleme">Problème (V3)</option>
+                        <option value="#solution">Solution (V3)</option>
+                        <option value="#candidate-flow">Flux candidat (V3)</option>
+                        <option value="#agency-flow">Flux agence (V3)</option>
+                        <option value="#aide">Aide (V3)</option>
                     </select>
                 </header>
                 <iframe id="leftFrame" src="index.html"></iframe>
@@ -43,7 +50,8 @@
                 <header>
                     <select id="rightVariant" class="compare-select">
                         <option value="index.html">Version A (index.html)</option>
-                        <option value="index-alt.html" selected>Version B (index-alt.html)</option>
+                        <option value="index-alt.html">Version B (index-alt.html)</option>
+                        <option value="index-v3.html" selected>Version C (index-v3.html)</option>
                     </select>
                     <select id="rightSub" class="compare-select">
                         <option value="#top">Haut de page</option>
@@ -51,9 +59,14 @@
                         <option value="#agences">Section agences</option>
                         <option value="#comment-ca-marche">Comment ça marche</option>
                         <option value="#contact">Contact/Démo</option>
+                        <option value="#probleme">Problème (V3)</option>
+                        <option value="#solution">Solution (V3)</option>
+                        <option value="#candidate-flow">Flux candidat (V3)</option>
+                        <option value="#agency-flow">Flux agence (V3)</option>
+                        <option value="#aide">Aide (V3)</option>
                     </select>
                 </header>
-                <iframe id="rightFrame" src="index-alt.html"></iframe>
+                <iframe id="rightFrame" src="index-v3.html"></iframe>
             </div>
         </div>
     </div>

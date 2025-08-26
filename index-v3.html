@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seventee - La location immobilière qui change</title>
+    <meta name="description" content="Fini les 50 candidatures à trier. Seventee vous donne 3 dossiers prêts à décider. -50% de coûts, 6h gagnées.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seventee.com/">
+    <meta property="og:title" content="Seventee - La location immobilière qui change">
+    <meta property="og:description" content="3 dossiers prêts à décider. -50% de coûts. 6h gagnées par location.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="Ressources/Seventee_Logo_Black_Green_RVB.svg">
+    <link rel="icon" type="image/png" href="Ressources/Seventee_Logo_White_Green_RVB_resized.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles-v3.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__brand">
+                    <img src="Ressources/Seventee_Logo_Black_Green_RVB.svg" alt="Seventee" class="header__logo">
+                </div>
+                <nav class="nav">
+                    <a href="#probleme" class="nav__link">Le problème</a>
+                    <a href="#solution" class="nav__link">La solution</a>
+                    <a href="#aide" class="nav__link">Aide</a>
+                    <a href="#contact" class="nav__link">Contact</a>
+                    <div class="version-switcher">
+                        <select id="versionSelect" class="version-select" onchange="switchVersion(this.value)">
+                            <option value="index.html">Version A</option>
+                            <option value="index-alt.html">Version B</option>
+                            <option value="index-v3.html" selected>Version C</option>
+                            <option value="compare.html">Comparer A/B/C</option>
+                        </select>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - SUSCITER LE BESOIN -->
+    <section id="probleme" class="hero hero--problem">
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__text">
+                    <h1 class="hero__title" id="hero-title">
+                        <span class="rotating-message">Vous en avez marre de <span class="highlight">trier 50 candidatures</span> ?</span>
+                    </h1>
+                    <p class="hero__subtitle">
+                        La location immobilière a changé. Les candidats sont plus nombreux, les portails plus chers, 
+                        et vous passez votre temps à dire "c'est déjà loué".
+                    </p>
+                    <div class="hero__stats">
+                        <div class="stat">
+                            <div class="stat__number">50</div>
+                            <div class="stat__label">candidatures à trier</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__number">6h</div>
+                            <div class="stat__label">perdues par location</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__number">+200€</div>
+                            <div class="stat__label">de coûts portails</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <div class="problem-visual">
+                        <div class="problem-card">
+                            <div class="problem-icon">📞</div>
+                            <p>Standard saturé</p>
+                        </div>
+                        <div class="problem-card">
+                            <div class="problem-icon">📋</div>
+                            <p>Dossiers partout</p>
+                        </div>
+                        <div class="problem-card">
+                            <div class="problem-icon">💰</div>
+                            <p>Coûts qui explosent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="section section--solution">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Et si on changeait ça ?</h2>
+                <p class="section__subtitle">Seventee vous donne 3 dossiers prêts à décider. C'est tout.</p>
+            </div>
+            
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-card__icon">🎯</div>
+                    <h3>3 dossiers maximum</h3>
+                    <p>Fini le tri. Vous recevez uniquement les candidatures qui correspondent à votre bien.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-card__icon">💰</div>
+                    <h3>-50% de coûts</h3>
+                    <p>Notre vivier mutualisé réduit vos dépenses sur les portails traditionnels.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-card__icon">⚡</div>
+                    <h3>6h gagnées</h3>
+                    <p>Vos équipes se concentrent sur l'essentiel : conseiller et louer.</p>
+                </div>
+            </div>
+
+            <!-- Navigation simple Candidat vs Agence -->
+            <div class="audience-selector">
+                <h3>Vous êtes :</h3>
+                <div class="audience-buttons">
+                    <button class="audience-btn audience-btn--candidate" onclick="showCandidateFlow()">
+                        <div class="audience-btn__icon">🏠</div>
+                        <div class="audience-btn__text">
+                            <strong>Un candidat</strong>
+                            <span>Je cherche un logement</span>
+                        </div>
+                    </button>
+                    <button class="audience-btn audience-btn--agency" onclick="showAgencyFlow()">
+                        <div class="audience-btn__icon">🏢</div>
+                        <div class="audience-btn__text">
+                            <strong>Une agence</strong>
+                            <span>Je loue des biens</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Candidate Flow -->
+    <section id="candidate-flow" class="section section--candidate-flow" style="display: none;">
+        <div class="container">
+            <div class="flow-header">
+                <button class="back-btn" onclick="showMainSolution()">← Retour</button>
+                <h2>Pour les candidats</h2>
+            </div>
+            
+            <div class="search-section">
+                <h3>Trouvez votre logement</h3>
+                <div class="search-bar">
+                    <input type="text" id="city-search" placeholder="Ville ou code postal" class="search-input">
+                    <button class="search-btn">Rechercher</button>
+                </div>
+            </div>
+
+            <div class="candidate-benefits">
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">🚀</div>
+                    <h4>Accès en avant-première</h4>
+                    <p>Découvrez les biens 5 jours avant leur diffusion sur les portails.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">✅</div>
+                    <h4>Dossier certifié</h4>
+                    <p>Votre dossier est vérifié pour maximiser vos chances.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">🎯</div>
+                    <h4>Ciblage intelligent</h4>
+                    <p>Nous vous proposons les biens qui vous correspondent.</p>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <a href="#inscription" class="btn btn--primary btn--large">Créer mon compte candidat</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agency Flow -->
+    <section id="agency-flow" class="section section--agency-flow" style="display: none;">
+        <div class="container">
+            <div class="flow-header">
+                <button class="back-btn" onclick="showMainSolution()">← Retour</button>
+                <h2>Pour les agences</h2>
+            </div>
+
+            <div class="agency-process">
+                <div class="process-step">
+                    <div class="process-step__number">1</div>
+                    <div class="process-step__content">
+                        <h4>Publiez votre annonce</h4>
+                        <p>Ajoutez votre bien sur Seventee en quelques clics.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-step__number">2</div>
+                    <div class="process-step__content">
+                        <h4>Recevez 3 dossiers</h4>
+                        <p>Seventee regroupe toutes les candidatures au même endroit. Vous recevez uniquement les 3 meilleurs profils.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-step__number">3</div>
+                    <div class="process-step__content">
+                        <h4>Choisissez et louez</h4>
+                        <p>Organisez les visites et signez avec le candidat idéal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <p>"Avec Seventee, nous avons réduit de moitié nos dépenses sur les portails et nos équipes sont enfin sereines."</p>
+                    <cite>- Directeur, Agence Partenaire</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Le temps que nous avons gagné sur le tri des dossiers est colossal. Nous nous concentrons sur notre vrai métier : le conseil."</p>
+                    <cite>- Gérante, Régie Immobilière</cite>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <a href="#demo" class="btn btn--primary btn--large">Voir une démo</a>
+                <a href="tel:0603171747" class="btn btn--outline btn--large">Appeler Guillaume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aide Section -->
+    <section id="aide" class="section section--help">
+        <div class="container">
+            <h2 class="section__title">Comment ça marche ?</h2>
+            
+            <div class="help-content">
+                <div class="help-video">
+                    <div class="video-placeholder">
+                        <div class="video-icon">▶️</div>
+                        <h3>Vidéo de démonstration</h3>
+                        <p>Découvrez Seventee en action</p>
+                    </div>
+                </div>
+                
+                <div class="help-testimonials">
+                    <h3>Témoignages clients</h3>
+                    <div class="testimonial-video">
+                        <div class="video-placeholder">
+                            <div class="video-icon">▶️</div>
+                            <p>Témoignage agence</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-video">
+                        <div class="video-placeholder">
+                            <div class="video-icon">▶️</div>
+                            <p>Témoignage candidat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="help-links">
+                <a href="https://linkedin.com/company/seventee" class="help-link" target="_blank">
+                    <span class="help-link__icon">💼</span>
+                    <span>Suivez-nous sur LinkedIn</span>
+                </a>
+                <a href="mailto:contact@seventee.com" class="help-link">
+                    <span class="help-link__icon">📧</span>
+                    <span>contact@seventee.com</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section--contact">
+        <div class="container">
+            <h2 class="section__title">Prêt à changer ?</h2>
+            <p class="section__subtitle">Parlez à Guillaume, il vous explique tout en 10 minutes</p>
+            
+            <div class="contact-options">
+                <a href="tel:0603171747" class="contact-option">
+                    <div class="contact-option__icon">📞</div>
+                    <div class="contact-option__content">
+                        <h3>Appeler maintenant</h3>
+                        <p>06 03 17 17 47</p>
+                    </div>
+                </a>
+                <a href="mailto:guillaume.deslandes@seventee.com" class="contact-option">
+                    <div class="contact-option__icon">📧</div>
+                    <div class="contact-option__content">
+                        <h3>Envoyer un email</h3>
+                        <p>guillaume.deslandes@seventee.com</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <img src="Ressources/Seventee_Logo_White_Green_RVB_resized.png" alt="Seventee" class="footer__logo">
+                    <p>La plateforme de location immobilière qui révolutionne le marché</p>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4>Agences</h4>
+                        <ul>
+                            <li><a href="#agency-flow">Comment ça marche</a></li>
+                            <li><a href="#contact">Demander une démo</a></li>
+                            <li><a href="#aide">Aide</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Candidats</h4>
+                        <ul>
+                            <li><a href="#candidate-flow">Rechercher un logement</a></li>
+                            <li><a href="#inscription">Créer un compte</a></li>
+                            <li><a href="#aide">Aide</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Entreprise</h4>
+                        <ul>
+                            <li><a href="https://linkedin.com/company/seventee" target="_blank">LinkedIn</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#legal">Mentions légales</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script-v3.js"></script>
+</body>
+</html>

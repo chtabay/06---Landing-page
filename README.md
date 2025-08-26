@@ -2,6 +2,13 @@
 
 Une landing page moderne et professionnelle pour Seventee, conçue pour convertir à la fois les agences immobilières et les candidats locataires.
 
+## Versions disponibles
+
+- **Version A** (`index.html`) : Version principale avec hero section claire
+- **Version B** (`index-alt.html`) : Version alternative avec layout en colonnes  
+- **Version V3** (`index-v3.html`) : Version simplifiée et directe, centrée sur le problème
+- **Page de comparaison** (`compare.html`) : Comparaison côte à côte des versions
+
 ## 🎯 Objectifs
 
 Cette landing page a été conçue pour :
@@ -18,8 +25,8 @@ Cette landing page a été conçue pour :
 - CTA "Demander une démo"
 
 ### 2. Hero Section
-- Titre impactant : "À Lyon, arrêtez de chercher des locataires. Commencez à les choisir."
-- Statistiques clés (30x plus de candidatures, 6h économisées, 25 agences)
+- Titre impactant : "Trouvez votre logement idéal avant tout le monde."
+- Statistiques clés (50% réduction coûts, 6h économisées, 3 candidatures préqualifiées)
 - Visuel de l'interface produit
 
 ### 3. Sélection de l'Audience
@@ -164,6 +171,29 @@ La page s'adapte parfaitement à :
 - Couleur et texte des CTAs
 - Ordre des arguments (Efficacité vs Coût)
 - Formulaires (nombre de champs)
+
+## 📋 Version V3 - Approche simplifiée
+
+La **Version V3** (`index-v3.html`) implémente une approche plus directe basée sur les retours utilisateurs :
+
+### ✅ Améliorations apportées
+
+1. **Susciter le besoin en premier** : Commence par le problème (50 candidatures à trier, 6h perdues, +200€ de coûts)
+2. **Message ultra-simple** : Chaque étape est claire et compréhensible
+3. **Navigation simplifiée** : Aiguillage Candidat vs Agence très direct
+4. **CTA plus direct** : "Voir une démo" au lieu de "Demander une démo"
+5. **Section aide avec vidéos** : Placeholders pour vidéos d'écrans et témoignages
+6. **Mention LinkedIn** : Intégration de Seventee.com sur LinkedIn
+7. **Retrait de l'équipe** : Focus sur le produit, pas sur l'équipe
+
+### 🎯 Structure V3
+
+1. **Hero - Problème** : "Vous en avez marre de trier 50 candidatures ?"
+2. **Solution** : "Et si on changeait ça ?" + 3 bénéfices clés
+3. **Navigation simple** : 2 boutons "Candidat" vs "Agence"
+4. **Flux dédiés** : Parcours spécifique pour chaque audience
+5. **Aide** : Vidéos de démonstration et témoignages
+6. **Contact direct** : Appel ou email Guillaume
 
 ## 📞 Contact Technique
 
