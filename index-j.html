@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seventee - Recevez 3 dossiers qualifiés en 24h. Garantis.</title>
+    <meta name="description" content="Propriétaires, locataires : vous en avez marre du chaos ? Seventee révolutionne la location immobilière avec des dossiers certifiés et un matching intelligent.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seventee.com/">
+    <meta property="og:title" content="Seventee - Recevez 3 dossiers qualifiés en 24h">
+    <meta property="og:description" content="La plateforme qui révolutionne la location immobilière pour candidats et agences.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="Ressources/Seventee_Logo_Black_Green_RVB.svg">
+    <link rel="icon" type="image/png" href="Ressources/Seventee_Logo_White_Green_RVB_resized.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles-j.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="logo">
+                    <img src="Ressources/Seventee_Logo_Black_Green_RVB.svg" alt="Seventee" class="logo__img">
+                </div>
+                <nav class="nav">
+                    <a href="#aide" class="nav__link">Aide</a>
+                    <a href="#securite" class="nav__link">Sécurité</a>
+                    <a href="https://linkedin.com/company/seventee" target="_blank" class="nav__link">LinkedIn</a>
+                    <a href="#contact" class="nav__link nav__link--highlight">Commencer gratuitement</a>
+                </nav>
+                <div class="version-switcher">
+                    <select id="versionSelect" class="version-select" onchange="switchVersion(this.value)">
+                        <option value="index.html">Version A</option>
+                        <option value="index-alt.html">Version B</option>
+                        <option value="index-v3.html">Version C</option>
+                        <option value="index-d.html">Version D</option>
+                        <option value="index-e.html">Version E</option>
+                        <option value="index-f.html">Version F</option>
+                        <option value="index-g.html">Version G</option>
+                        <option value="index-h.html">Version H</option>
+                        <option value="index-i.html">Version I</option>
+                        <option value="index-j.html" selected>Version J</option>
+                        <option value="compare.html">Comparer toutes</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item">
+                    <span class="trust-icon">🔒</span>
+                    <span>Données sécurisées</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">⚡</span>
+                    <span>Réponse en 24h</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">✅</span>
+                    <span>150+ agences partenaires</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">🏆</span>
+                    <span>Dossiers certifiés</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Above the Fold Content -->
+    <div class="above-the-fold">
+        <!-- Hero Section - Style Mila/Momentum -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__badge">
+                        <span class="badge">Révolutionnez votre location immobilière</span>
+                    </div>
+                    
+                    <h1 class="hero__title">
+                        Propriétaires, locataires :<br>
+                        <span class="gradient-text">vous en avez marre du chaos ?</span>
+                    </h1>
+                    
+                    <p class="hero__subtitle">
+                        Recevez <strong>3 dossiers qualifiés maximum</strong> en 24h. Réduisez vos coûts de 50%. 
+                        Gagnez 6h par location. <span class="highlight">Garantis.</span>
+                    </p>
+                    
+                    <!-- Value Props -->
+                    <div class="value-props">
+                        <div class="value-prop">
+                            <span class="value-icon">⏰</span>
+                            <span>24h max</span>
+                        </div>
+                        <div class="value-prop">
+                            <span class="value-icon">🎯</span>
+                            <span>3 dossiers max</span>
+                        </div>
+                        <div class="value-prop">
+                            <span class="value-icon">💰</span>
+                            <span>-50% de coûts</span>
+                        </div>
+                        <div class="value-prop">
+                            <span class="value-icon">⚡</span>
+                            <span>6h gagnées</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Search Bar Simplified -->
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <input type="text" placeholder="Votre ville ou code postal" class="search-input" id="mainSearch">
+                            <button class="search-button" type="button">
+                                <span>Commencer</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="search-hint">✅ Gratuit • ✅ Sans engagement • ✅ Réponse en 24h</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Choice Section - Plus Direct -->
+        <section class="choice-section">
+            <div class="container">
+                <h2 class="choice__title">Vous êtes plutôt :</h2>
+                <div class="choice-grid">
+                    <!-- Candidats Choice -->
+                    <div class="choice-card candidat-choice" onclick="showCandidatFlow()">
+                        <div class="choice-card__header">
+                            <div class="choice-card__icon">🏠</div>
+                            <div class="choice-card__label">Candidat</div>
+                        </div>
+                        <h3>Je cherche un logement</h3>
+                        <div class="choice-benefits">
+                            <div class="benefit">✨ Accès en avant-première</div>
+                            <div class="benefit">🎯 Dossier certifié une fois</div>
+                            <div class="benefit">⚡ Candidature prioritaire</div>
+                        </div>
+                        <div class="choice-cta">
+                            <span>Créer mon dossier →</span>
+                        </div>
+                    </div>
+
+                    <!-- Agences Choice -->
+                    <div class="choice-card agence-choice" onclick="showAgenceFlow()">
+                        <div class="choice-card__header">
+                            <div class="choice-card__icon">🏢</div>
+                            <div class="choice-card__label">Agence</div>
+                        </div>
+                        <h3>Je loue des biens</h3>
+                        <div class="choice-benefits">
+                            <div class="benefit">📋 3 dossiers max par bien</div>
+                            <div class="benefit">💰 -50% de coûts</div>
+                            <div class="benefit">⏰ 6h gagnées par location</div>
+                        </div>
+                        <div class="choice-cta">
+                            <span>Tester gratuitement →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof Section -->
+        <section class="social-proof">
+            <div class="container">
+                <div class="social-proof__content">
+                    <p class="social-proof__intro">Utilisé par 150+ agences et 2500+ candidats</p>
+                    <div class="testimonials-quick">
+                        <div class="testimonial-quick">
+                            <div class="testimonial-avatar">MD</div>
+                            <div class="testimonial-content">
+                                <p>"50% de coûts en moins, 6h gagnées"</p>
+                                <cite>Marie D. - Agence Partenaire Lyon</cite>
+                            </div>
+                        </div>
+                        <div class="testimonial-quick">
+                            <div class="testimonial-avatar">PM</div>
+                            <div class="testimonial-content">
+                                <p>"Logement trouvé en 2 semaines"</p>
+                                <cite>Pierre M. - Candidat Paris</cite>
+                            </div>
+                        </div>
+                        <div class="testimonial-quick">
+                            <div class="testimonial-avatar">SL</div>
+                            <div class="testimonial-content">
+                                <p>"Fini le tri de 50 dossiers"</p>
+                                <cite>Sophie L. - Directrice Agence</cite>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Actions -->
+        <section class="bottom-actions">
+            <div class="container">
+                <div class="bottom-actions__grid">
+                    <button class="action-btn primary-action" onclick="showDemo()">
+                        <span class="action-icon">▶️</span>
+                        <div class="action-content">
+                            <span class="action-title">Voir en action</span>
+                            <span class="action-subtitle">Démo 3 min</span>
+                        </div>
+                    </button>
+                    <button class="action-btn secondary-action" onclick="showTestimonials()">
+                        <span class="action-icon">💬</span>
+                        <div class="action-content">
+                            <span class="action-title">Témoignages</span>
+                            <span class="action-subtitle">Clients réels</span>
+                        </div>
+                    </button>
+                    <button class="action-btn tertiary-action" onclick="showSecurity()">
+                        <span class="action-icon">🔒</span>
+                        <div class="action-content">
+                            <span class="action-title">Sécurité</span>
+                            <span class="action-subtitle">Données protégées</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Hidden Flow Sections -->
+    <section id="candidat-flow" class="flow-section hidden">
+        <div class="container">
+            <div class="flow-header">
+                <button class="back-btn" onclick="showChoice()">← Retour</button>
+                <h2>Pour les candidats</h2>
+                <div class="flow-badge">Gratuit • Sans engagement</div>
+            </div>
+            
+            <div class="flow-content">
+                <div class="flow-demo">
+                    <div class="demo-video">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶️</div>
+                            <p>Vidéo : Créez votre dossier en 5 minutes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-features">
+                        <h3>Votre avantage candidat :</h3>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <span class="feature-icon">🚀</span>
+                                <div>
+                                    <strong>Accès 5 jours avant</strong>
+                                    <p>Découvrez les biens avant leur diffusion publique</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✅</span>
+                                <div>
+                                    <strong>Dossier certifié</strong>
+                                    <p>Validation instantanée, crédibilité maximale</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🎯</span>
+                                <div>
+                                    <strong>Matching intelligent</strong>
+                                    <p>On vous propose les biens qui vous correspondent</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flow-cta-section">
+                    <button class="btn btn--primary btn--large">Créer mon dossier candidat</button>
+                    <p class="cta-benefits">✅ Gratuit ✅ 5 minutes ✅ Accès immédiat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="agence-flow" class="flow-section hidden">
+        <div class="container">
+            <div class="flow-header">
+                <button class="back-btn" onclick="showChoice()">← Retour</button>
+                <h2>Pour les agences</h2>
+                <div class="flow-badge">Test gratuit • ROI immédiat</div>
+            </div>
+            
+            <div class="flow-content">
+                <div class="flow-demo">
+                    <div class="demo-video">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶️</div>
+                            <p>Vidéo : Tableau de bord agence en 2 minutes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-roi">
+                        <h3>Votre ROI avec Seventee :</h3>
+                        <div class="roi-calculator">
+                            <div class="roi-item">
+                                <div class="roi-number">-50%</div>
+                                <div class="roi-label">Coûts diffusion</div>
+                            </div>
+                            <div class="roi-item">
+                                <div class="roi-number">6h</div>
+                                <div class="roi-label">Gagnées / location</div>
+                            </div>
+                            <div class="roi-item">
+                                <div class="roi-number">3</div>
+                                <div class="roi-label">Dossiers max</div>
+                            </div>
+                            <div class="roi-item">
+                                <div class="roi-number">24h</div>
+                                <div class="roi-label">Délai réponse</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flow-testimonial">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"Avec Seventee, nos équipes sont sereines. Fini le tri de 50 dossiers, nous n'en recevons que 3, tous qualifiés. Notre chiffre d'affaires a augmenté de 30% en réduisant nos coûts."</div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MD</div>
+                            <div class="author-info">
+                                <strong>Marie Dubois</strong>
+                                <span>Directrice - Agence Partenaire Lyon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flow-cta-section">
+                    <button class="btn btn--primary btn--large">Tester gratuitement</button>
+                    <p class="cta-benefits">✅ Essai 30 jours ✅ Support dédié ✅ ROI garanti</p>
+                    <p class="linkedin-link">
+                        <a href="https://linkedin.com/company/seventee" target="_blank">
+                            🔗 Suivez-nous sur LinkedIn pour les actualités
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo-section" class="flow-section hidden">
+        <div class="container">
+            <div class="flow-header">
+                <button class="back-btn" onclick="showChoice()">← Retour</button>
+                <h2>Découvrez Seventee en action</h2>
+                <div class="flow-badge">3 minutes pour tout comprendre</div>
+            </div>
+            
+            <div class="demo-grid">
+                <div class="demo-card featured">
+                    <div class="demo-thumbnail">
+                        <div class="play-button large">▶️</div>
+                        <div class="demo-duration">3:24</div>
+                    </div>
+                    <div class="demo-info">
+                        <h3>Présentation complète Seventee</h3>
+                        <p>Découvrez comment nous révolutionnons la location immobilière</p>
+                        <div class="demo-stats">👀 2.3k vues • ⭐ 4.9/5</div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <div class="demo-thumbnail">
+                        <div class="play-button">▶️</div>
+                        <div class="demo-duration">1:45</div>
+                    </div>
+                    <div class="demo-info">
+                        <h4>Interface candidat</h4>
+                        <p>Créer son dossier en 5 minutes</p>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <div class="demo-thumbnail">
+                        <div class="play-button">▶️</div>
+                        <div class="demo-duration">2:12</div>
+                    </div>
+                    <div class="demo-info">
+                        <h4>Tableau de bord agence</h4>
+                        <p>Gérer ses annonces efficacement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials-section" class="flow-section hidden">
+        <div class="container">
+            <div class="flow-header">
+                <button class="back-btn" onclick="showChoice()">← Retour</button>
+                <h2>Nos clients témoignent</h2>
+                <div class="flow-badge">Retours authentiques</div>
+            </div>
+            
+            <div class="testimonials-detailed">
+                <div class="testimonial-detailed">
+                    <div class="testimonial-video">
+                        <div class="video-thumbnail">
+                            <div class="play-button">▶️</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <h4>Marie Dubois - Agence Partenaire Lyon</h4>
+                        <blockquote>"50% de coûts en moins, 6h gagnées par location. Nos équipes adorent."</blockquote>
+                        <div class="testimonial-results">
+                            <span class="result">-50% coûts</span>
+                            <span class="result">+30% CA</span>
+                            <span class="result">6h gagnées</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-detailed">
+                    <div class="testimonial-video">
+                        <div class="video-thumbnail">
+                            <div class="play-button">▶️</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <h4>Pierre Martin - Candidat Paris</h4>
+                        <blockquote>"Logement trouvé en 2 semaines après 6 mois de galère. Merci Seventee !"</blockquote>
+                        <div class="testimonial-results">
+                            <span class="result">2 semaines</span>
+                            <span class="result">Dossier accepté</span>
+                            <span class="result">Paris 11e</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security-section" class="flow-section hidden">
+        <div class="container">
+            <div class="flow-header">
+                <button class="back-btn" onclick="showChoice()">← Retour</button>
+                <h2>Vos données en sécurité</h2>
+                <div class="flow-badge">Conformité RGPD • Hébergement France</div>
+            </div>
+            
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="security-icon">🔒</div>
+                    <h3>Chiffrement SSL</h3>
+                    <p>Toutes vos données sont chiffrées avec les standards bancaires</p>
+                </div>
+                
+                <div class="security-card">
+                    <div class="security-icon">🇫🇷</div>
+                    <h3>Hébergement France</h3>
+                    <p>Serveurs certifiés, localisés en France, conformes RGPD</p>
+                </div>
+                
+                <div class="security-card">
+                    <div class="security-icon">✅</div>
+                    <h3>Conformité RGPD</h3>
+                    <p>Respect total de la réglementation européenne</p>
+                </div>
+                
+                <div class="security-card">
+                    <div class="security-icon">🛡️</div>
+                    <h3>Sauvegarde automatique</h3>
+                    <p>Vos dossiers sont sauvegardés automatiquement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <img src="Ressources/Seventee_Logo_White_Green_RVB_resized.png" alt="Seventee" class="footer__logo">
+                    <p>La plateforme qui révolutionne la location immobilière</p>
+                    <div class="footer__trust">
+                        <span>🔒 Données sécurisées</span>
+                        <span>🇫🇷 Hébergé en France</span>
+                        <span>✅ Conforme RGPD</span>
+                    </div>
+                </div>
+                
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4>Candidats</h4>
+                        <ul>
+                            <li><a href="#candidat-flow">Créer mon dossier</a></li>
+                            <li><a href="#demo-section">Voir la démo</a></li>
+                            <li><a href="#security-section">Sécurité des données</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Agences</h4>
+                        <ul>
+                            <li><a href="#agence-flow">Tester gratuitement</a></li>
+                            <li><a href="#testimonials-section">Témoignages</a></li>
+                            <li><a href="https://linkedin.com/company/seventee" target="_blank">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#aide">Centre d'aide</a></li>
+                            <li><a href="mailto:contact@seventee.com">Contact</a></li>
+                            <li><a href="tel:+33123456789">01 23 45 67 89</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 Seventee. Tous droits réservés.</p>
+                <div class="footer__legal">
+                    <a href="#mentions">Mentions légales</a>
+                    <a href="#privacy">Politique de confidentialité</a>
+                    <a href="#cgv">CGV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script-j.js"></script>
+</body>
+</html>
