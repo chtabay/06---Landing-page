@@ -1,195 +1,84 @@
-// Version K JavaScript - Fidèle au croquis original
-// Design minimaliste et fonctionnalités essentielles
+// Version K JavaScript - Refactorisé pour un parcours utilisateur unique et clair
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🎯 Version K - Seventee Landing Page évoluée (SaaS 2025)');
+    console.log('🎯 Version K - Logique de parcours unique activée');
     
-    // Initialisation moderne
+    // Initialisations modernes et ciblées
     initializeSearch();
-    initializeNavigation();
     initializeVersionSelector();
-    initializeSearchSuggestions();
-    initializeTrustAnimations();
-    initializeMagneticButtons();
-    
-    // Afficher la page principale par défaut
-    showMainPage();
-    
-    // Track simple
-    trackEvent('page_loaded', { version: 'K-Enhanced' });
+    initializeScrollAnchors();
+    initializeFloatingCta();
+    initializeTrustAnimations(); // Gardé de la version précédente
 });
 
-// Recherche intelligente avec suggestions
+// Recherche intelligente (comportement inchangé pour l'instant)
 function initializeSearch() {
     const searchInput = document.getElementById('mainSearch');
     const searchButton = document.querySelector('.search-button');
-    const suggestions = document.getElementById('searchSuggestions');
     
     if (!searchInput || !searchButton) return;
     
-    // Gestion de la recherche
     const handleSearch = () => {
         const query = searchInput.value.trim();
-        
         if (query.length === 0) {
-            alert('Veuillez saisir une ville, un code postal ou une adresse');
             searchInput.focus();
             return;
         }
-        
-        // Track search
-        trackEvent('search_performed', {
-            query: query,
-            location: 'main_search'
-        });
-        
-        // Afficher le flow candidat avec la recherche
-        showCandidatFlow();
-        
-        console.log('Recherche effectuée:', query);
+        trackEvent('search_performed', { query: query });
+        // Pour l'instant, la recherche redirige vers le tunnel candidat
+        window.open('https://candidate.seventee.com/location-appartement-maison', '_blank');
     };
     
-    // Événements
     searchButton.addEventListener('click', handleSearch);
-    
-    searchInput.addEventListener('keypress', function(e) {
+    searchInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
             handleSearch();
         }
     });
-    
-    // Focus amélioré avec suggestions
-    searchInput.addEventListener('focus', function() {
-        this.parentElement.style.borderColor = 'var(--primary-color)';
-        if (suggestions) {
-            suggestions.style.display = 'block';
+}
+
+// Nouvelle fonction pour la navigation par ancres
+function initializeScrollAnchors() {
+    const anchorButtons = document.querySelectorAll('.assistance-btn');
+    anchorButtons.forEach(button => {
+        // L'ID de la section est déjà dans l'attribut onclick
+        button.addEventListener('click', () => {
+            const sectionId = button.getAttribute('onclick').match(/'([^']+)'/)[1];
+            scrollToSection(sectionId);
+        });
+    });
+}
+
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        trackEvent('anchor_scroll', { to_section: sectionId });
+    }
+}
+
+// Nouvelle fonction pour gérer le CTA flottant
+function initializeFloatingCta() {
+    const floatingCta = document.getElementById('floatingCta');
+    const heroSection = document.querySelector('.main-page');
+    if (!floatingCta || !heroSection) return;
+
+    const heroHeight = heroSection.offsetHeight;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > heroHeight / 2) {
+            floatingCta.classList.add('visible');
+        } else {
+            floatingCta.classList.remove('visible');
         }
-    });
-    
-    searchInput.addEventListener('blur', function() {
-        setTimeout(() => {
-            if (!this.value) {
-                this.parentElement.style.borderColor = '';
-            }
-            if (suggestions) {
-                suggestions.style.display = 'none';
-            }
-        }, 200);
-    });
+    }, { passive: true });
 }
 
-// Navigation simple entre les pages
-function initializeNavigation() {
-    // Gestion des sections principales
-    const candidatSection = document.querySelector('.candidat-section');
-    const agencesSection = document.querySelector('.agences-section');
-    
-    if (candidatSection) {
-        candidatSection.addEventListener('click', function() {
-            trackEvent('section_clicked', { type: 'candidat' });
-            showCandidatFlow();
-        });
-    }
-    
-    if (agencesSection) {
-        agencesSection.addEventListener('click', function() {
-            trackEvent('section_clicked', { type: 'agence' });
-            showAgenceFlow();
-        });
-    }
-    
-    // Gestion des boutons CTA
-    const ctaButtons = document.querySelectorAll('.section-btn, .flow-btn-primary');
-    ctaButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const btnText = this.textContent.trim();
-            trackEvent('cta_clicked', { button: btnText });
-            
-            // Feedback visuel simple
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-            
-            // Log des redirections vers les vraies URLs
-            if (btnText.includes('dossier')) {
-                console.log('Redirection vers: https://candidate.seventee.com/location-appartement-maison');
-            } else if (btnText.includes('démo')) {
-                console.log('Redirection vers: https://landingpage.seventee.com/fr/demandez-une-démo-de-seventee');
-            }
-        });
-    });
-    
-    // Gestion des boutons d'orientation
-    const orientationBtns = document.querySelectorAll('.orientation-btn');
-    orientationBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const btnText = this.textContent.trim();
-            trackEvent('orientation_clicked', { button: btnText });
-        });
-    });
-}
 
-// Fonctions de navigation - Simple et direct
-function showMainPage() {
-    hideAllPages();
-    document.getElementById('main-page').style.display = 'block';
-}
+// --- Fonctions conservées et globales ---
 
-function showCandidatFlow() {
-    hideAllPages();
-    const candidatFlow = document.getElementById('candidat-flow');
-    candidatFlow.classList.add('active');
-    candidatFlow.scrollIntoView({ behavior: 'smooth' });
-}
-
-function showAgenceFlow() {
-    hideAllPages();
-    const agenceFlow = document.getElementById('agence-flow');
-    agenceFlow.classList.add('active');
-    agenceFlow.scrollIntoView({ behavior: 'smooth' });
-}
-
-function showProprietaireHelp() {
-    hideAllPages();
-    const helpPage = document.getElementById('proprietaire-help');
-    helpPage.classList.add('active');
-    helpPage.scrollIntoView({ behavior: 'smooth' });
-    trackEvent('help_page_viewed', { type: 'proprietaire' });
-}
-
-function showCandidatHelp() {
-    hideAllPages();
-    const helpPage = document.getElementById('candidat-help');
-    helpPage.classList.add('active');
-    helpPage.scrollIntoView({ behavior: 'smooth' });
-    trackEvent('help_page_viewed', { type: 'candidat' });
-}
-
-function showAgenceHelp() {
-    hideAllPages();
-    const helpPage = document.getElementById('agence-help');
-    helpPage.classList.add('active');
-    helpPage.scrollIntoView({ behavior: 'smooth' });
-    trackEvent('help_page_viewed', { type: 'agence' });
-}
-
-function hideAllPages() {
-    // Cacher la page principale
-    const mainPage = document.getElementById('main-page');
-    if (mainPage) {
-        mainPage.style.display = 'none';
-    }
-    
-    // Cacher tous les flows et pages d'aide
-    const allPages = document.querySelectorAll('.flow-page, .help-page');
-    allPages.forEach(page => {
-        page.classList.remove('active');
-    });
-}
-
-// Sélecteur de version
+// Sélecteur de version (inchangé)
 function initializeVersionSelector() {
     const versionSelect = document.getElementById('versionSelect');
     if (versionSelect) {
@@ -209,13 +98,13 @@ function initializeVersionSelector() {
     }
 }
 
-// Fonction globale pour le changement de version
+// Fonction globale pour le changement de version (requise par l'HTML)
 function switchVersion(path) {
     if (!path) return;
     window.location.href = path;
 }
 
-// Analytics simple - Tracking minimal
+// Analytics simple (inchangé)
 function trackEvent(eventName, properties = {}) {
     const eventData = {
         event: eventName,
@@ -250,73 +139,6 @@ window.addEventListener('load', function() {
     console.log(`✅ Version K chargée en ${Math.round(loadTime)}ms`);
 });
 
-// Fonctions globales pour les événements HTML
-window.showMainPage = showMainPage;
-window.showCandidatFlow = showCandidatFlow;
-window.showAgenceFlow = showAgenceFlow;
-window.showProprietaireHelp = showProprietaireHelp;
-window.showCandidatHelp = showCandidatHelp;
-window.showAgenceHelp = showAgenceHelp;
-window.switchVersion = switchVersion;
-
-// Améliorations UX simples
-document.addEventListener('DOMContentLoaded', function() {
-    // Hover effects simples sur les cards
-    const cards = document.querySelectorAll('.section-card, .step-card');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = '';
-        });
-    });
-    
-    // Focus amélioré pour l'accessibilité
-    const focusableElements = document.querySelectorAll('button, input, select, a');
-    focusableElements.forEach(element => {
-        element.addEventListener('focus', function() {
-            this.style.outline = '2px solid var(--primary-color)';
-            this.style.outlineOffset = '2px';
-        });
-        
-        element.addEventListener('blur', function() {
-            this.style.outline = '';
-            this.style.outlineOffset = '';
-        });
-    });
-    
-    // Gestion du retour (boutons back)
-    const backButtons = document.querySelectorAll('.back-btn');
-    backButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            showMainPage();
-            trackEvent('back_clicked');
-        });
-    });
-    
-    // Gestion des raccourcis clavier simples
-    document.addEventListener('keydown', function(e) {
-        // Escape = retour à l'accueil
-        if (e.key === 'Escape') {
-            showMainPage();
-        }
-        
-        // Alt + C = flow candidat
-        if (e.altKey && e.key === 'c') {
-            e.preventDefault();
-            showCandidatFlow();
-        }
-        
-        // Alt + A = flow agence
-        if (e.altKey && e.key === 'a') {
-            e.preventDefault();
-            showAgenceFlow();
-        }
-    });
-});
-
 // Détection du type de device pour analytics
 function getDeviceType() {
     const width = window.innerWidth;
@@ -334,29 +156,7 @@ window.addEventListener('load', function() {
     });
 });
 
-// Nouvelles fonctions SaaS modernes
-
-// Initialisation des suggestions de recherche
-function initializeSearchSuggestions() {
-    const suggestions = document.getElementById('searchSuggestions');
-    if (!suggestions) return;
-    
-    const suggestionItems = suggestions.querySelectorAll('.suggestion-item');
-    suggestionItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const searchInput = document.getElementById('mainSearch');
-            const cityName = this.textContent.split(' ')[1]; // Extraire le nom de la ville
-            
-            if (searchInput) {
-                searchInput.value = cityName;
-                suggestions.style.display = 'none';
-                trackEvent('suggestion_selected', { city: cityName });
-            }
-        });
-    });
-}
-
-// Animations trust bar
+// Animations trust bar (inchangé)
 function initializeTrustAnimations() {
     const trustNumbers = document.querySelectorAll('.trust-number');
     

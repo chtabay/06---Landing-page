@@ -147,20 +147,20 @@
                 </div>
             </section>
             
-            <!-- Navigation Assistance -->
+            <!-- Navigation Assistance - Mise à jour pour le scroll -->
             <section class="assistance-nav">
                 <div class="assistance-grid">
-                    <button class="assistance-btn" onclick="showProprietaireHelp()">
+                    <button class="assistance-btn" onclick="scrollToSection('solution-section')">
                         <span class="assistance-icon">🏠</span>
                         <span>Propriétaire</span>
                         <small>Trouvez votre agence</small>
                     </button>
-                    <button class="assistance-btn" onclick="showCandidatHelp()">
+                    <button class="assistance-btn" onclick="scrollToSection('how-section')">
                         <span class="assistance-icon">🤝</span>
                         <span>Accompagnement</span>
                         <small>Conseils personnalisés</small>
                     </button>
-                    <button class="assistance-btn" onclick="showAgenceHelp()">
+                    <button class="assistance-btn" onclick="scrollToSection('solution-section')">
                         <span class="assistance-icon">📊</span>
                         <span>Découverte</span>
                         <small>En savoir plus</small>
@@ -170,9 +170,9 @@
         </div>
     </main>
 
-    <!-- Sections Détaillées - Inspirées des versions B et C -->
+    <!-- Sections Détaillées - Le coeur de l'argumentaire -->
     <!-- Section 1: L'utilisateur se reconnaît -->
-    <section class="detail-section recognition-section">
+    <section class="detail-section recognition-section" id="recognition-section">
         <div class="container">
             <h2 class="detail-section-title">Vous vous reconnaissez ?</h2>
             <div class="dual-layout">
@@ -226,7 +226,7 @@
     </section>
 
     <!-- Section 2: Seventee y répond avec des chiffres -->
-    <section class="detail-section solution-section">
+    <section class="detail-section solution-section" id="solution-section">
         <div class="container">
             <h2 class="detail-section-title">Seventee y répond</h2>
             <div class="dual-layout">
@@ -278,7 +278,7 @@
     </section>
 
     <!-- Section 3: Comment ça marche -->
-    <section class="detail-section how-section">
+    <section class="detail-section how-section" id="how-section">
         <div class="container">
             <h2 class="detail-section-title">Comment ça marche</h2>
             <div class="dual-layout">
@@ -289,22 +289,22 @@
                         <div class="process-step">
                             <div class="step-number">1</div>
                             <div class="step-content">
-                                <h4>Créez votre profil</h4>
-                                <p>Renseignez vos critères et constituez votre dossier complet</p>
+                                <h4>Un Seul Dossier, Toutes les Opportunités</h4>
+                                <p>Renseignez vos critères et constituez votre dossier complet une seule fois.</p>
                             </div>
                         </div>
                         <div class="process-step">
                             <div class="step-number">2</div>
                             <div class="step-content">
-                                <h4>Recevez les opportunités</h4>
-                                <p>Nous vous proposons les biens qui correspondent à votre profil</p>
+                                <h4>Accédez au Marché Caché</h4>
+                                <p>Nous vous proposons des biens pertinents avant même leur publication.</p>
                             </div>
                         </div>
                         <div class="process-step">
                             <div class="step-number">3</div>
                             <div class="step-content">
-                                <h4>Candidatez en priorité</h4>
-                                <p>Votre dossier arrive en premier chez l'agence</p>
+                                <h4>Soyez le Premier sur la Pile</h4>
+                                <p>Votre dossier optimisé arrive en tête de liste directement chez l'agence.</p>
                             </div>
                         </div>
                     </div>
@@ -323,10 +323,10 @@
                         </div>
                         <div class="process-step">
                             <div class="step-number">2</div>
-                                                         <div class="step-content">
-                                 <h4>Matching automatique</h4>
-                                 <p>Notre algorithme ordonne les candidatures les plus pertinentes</p>
-                             </div>
+                            <div class="step-content">
+                                <h4>Le Tri Intelligent des Candidatures</h4>
+                                <p>Gagnez des heures : notre algorithme classe les dossiers pour vous permettre de vous concentrer sur les plus pertinents.</p>
+                            </div>
                         </div>
                         <div class="process-step">
                             <div class="step-number">3</div>
@@ -341,203 +341,44 @@
         </div>
     </section>
 
-    <!-- Flow Candidat - Structure du croquis page 2/3 -->
-    <section class="flow-page candidat-flow" id="candidat-flow">
+    <!-- CTA Flottant -->
+    <div class="floating-cta" id="floatingCta">
         <div class="container">
-            <div class="flow-header">
-                <button class="back-btn" onclick="showMainPage()">← Retour</button>
-                <h2>Candidat</h2>
-            </div>
-
-            <div class="flow-content">
-                <div class="flow-explanation">
-                    <p class="flow-intro">Ne cherchez plus nous cherchons pour vous</p>
-                    
-                    <div class="flow-center-text">
-                        <p>Cette section parle de ce avec cherchent les agences ou les candidats ou bien des problèmes qu'ils rencontrent</p>
-                        <p class="flow-highlight">Ensuite, Seventee montre qui y répond</p>
-                    </div>
-                </div>
-
-                <div class="flow-steps">
-                    <div class="step-card">
-                        <div class="step-visual"></div>
-                        <p>Accédez à des annonces 5 jours avant leur publication sur les autres portails</p>
-                    </div>
-
-                    <div class="step-card">
-                        <div class="step-visual"></div>
-                        <p>Créez votre dossier une fois et tous vos CV-Lettres de candidatures seront toujours à jour, vous pourrez l'exporter à tout bout</p>
-                    </div>
-
-                    <div class="step-card">
-                        <div class="step-visual"></div>
-                        <p>Nous vous aidons à constituer votre dossier grâce à nos aides en ligne et nos conseilliers</p>
-                    </div>
-
-                    <div class="step-card">
-                        <div class="step-visual"></div>
-                        <p>Vous êtes informé des vos chances d'obtenir un bien. Nous vous aidons à les optimiser</p>
-                    </div>
-
-                    <div class="step-card">
-                        <div class="step-visual"></div>
-                        <p>Si vous le souhaitez, vous pouvez être sollicité par une agence avant même la publication d'une annonce</p>
-                    </div>
-
-                    <div class="step-card">
-                        <div class="step-visual"></div>
-                        <p>Vous n'êtes sollicitez que sur des offres en rapport avec votre dossier idéal effectuer dans l'étape précédente</p>
-                    </div>
-
-                    <div class="step-card">
-                        <div class="step-visual"></div>
-                        <p>Vous pouvez mesurer l'adéquation entre votre dossier et vos biens ou vous convenez</p>
-                    </div>
-                </div>
-
-                <div class="flow-cta">
-                    <button class="flow-btn-primary">Créer mon dossier candidat</button>
-                </div>
+            <p class="floating-cta__text">Prêt à simplifier votre location ?</p>
+            <div class="floating-cta__buttons">
+                <button class="section-btn primary" onclick="window.open('https://candidate.seventee.com/location-appartement-maison', '_blank')">
+                    🚀 Créer mon profil
+                </button>
+                <button class="section-btn secondary" onclick="window.open('https://landingpage.seventee.com/fr/demandez-une-d%C3%A9mo-de-seventee', '_blank')">
+                    📊 Demander une démo
+                </button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Flow Agence/Professionnel - Structure du croquis page 3 -->
-    <section class="flow-page agence-flow" id="agence-flow">
-        <div class="container">
-            <div class="flow-header">
-                <button class="back-btn" onclick="showMainPage()">← Retour</button>
-                <h2>Professionnel</h2>
-                <p class="flow-subtitle">Simplifiez la location</p>
-            </div>
-
-            <div class="flow-content">
-                <div class="flow-explanation">
-                    <div class="flow-center-text">
-                        <p>Cette section parle de ce avec cherchent les agences ou les candidats ou bien des problèmes qu'ils rencontrent</p>
-                        <p class="flow-highlight">Ensuite, Seventee montre qui y répond</p>
-                    </div>
-                </div>
-
-                <div class="flow-steps">
-                    <div class="step-card">
-                        <div class="step-visual"></div>
-                        <p>Standardisez et fluidifiez votre relation avec les candidats</p>
-                    </div>
-
-                    <div class="step-card">
-                        <div class="step-visual"></div>
-                        <p>Vous recevez des dossiers de qualité sur vos annonces populaires</p>
-                    </div>
-
-                    <div class="step-card">
-                        <div class="step-visual"></div>
-                        <p>Nous fournissons des outils pour mettre à bien prix de location</p>
-                    </div>
-
-                    <div class="step-card">
-                        <div class="step-visual"></div>
-                        <p>Vous maîtrisez les sollicitations</p>
-                    </div>
-
-                    <div class="step-card">
-                        <div class="step-visual"></div>
-                        <p>Nous vous proposons une ergonomie efficace</p>
-                    </div>
-
-                    <div class="step-card">
-                        <div class="step-visual"></div>
-                        <p>Simplifiez la mise en location dans les zones tendues</p>
-                    </div>
-
-                    <div class="step-card">
-                        <div class="step-visual"></div>
-                        <p>Accédez à des dossiers optimisés et des candidats bien préparés</p>
-                    </div>
-                </div>
-
-                <div class="flow-cta">
-                    <button class="flow-btn-primary">Demander une démonstration</button>
-                    <p class="flow-contact">
-                        <a href="https://linkedin.com/company/seventee" target="_blank">
-                            Suivez-nous sur LinkedIn
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pages d'Aide - Basées sur les 3 boutons du croquis -->
-    <section class="help-page" id="proprietaire-help">
-        <div class="container">
-            <div class="flow-header">
-                <button class="back-btn" onclick="showMainPage()">← Retour</button>
-                <h2>Propriétaire, vous cherchez une agence?</h2>
-            </div>
-            <div class="help-content">
-                <p>Nous pouvons vous mettre en relation avec des agences partenaires spécialisées dans votre secteur.</p>
-                <button class="flow-btn-primary">Trouver une agence</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="help-page" id="candidat-help">
-        <div class="container">
-            <div class="flow-header">
-                <button class="back-btn" onclick="showMainPage()">← Retour</button>
-                <h2>Candidat, vous souhaitez être accompagné?</h2>
-            </div>
-            <div class="help-content">
-                <p>Nos conseillers peuvent vous aider à optimiser votre dossier et à cibler les biens qui vous correspondent.</p>
-                <button class="flow-btn-primary">Être accompagné</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="help-page" id="agence-help">
-        <div class="container">
-            <div class="flow-header">
-                <button class="back-btn" onclick="showMainPage()">← Retour</button>
-                <h2>Agence, vous voulez en savoir plus?</h2>
-            </div>
-            <div class="help-content">
-                <p>Découvrez comment Seventee peut transformer votre gestion locative et réduire vos coûts.</p>
-                <button class="flow-btn-primary">En savoir plus</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Simple -->
+    <!-- Footer Simplifié -->
     <footer class="footer">
         <div class="container">
             <div class="footer__content">
                 <div class="footer__brand">
                     <img src="Ressources/Seventee_Logo_White_Green_RVB_resized.png" alt="Seventee" class="footer__logo">
-                    <p>Dossier carré. Poisson frais.</p>
+                    <p>La location immobilière, enfin intelligente.</p>
                 </div>
                 
                 <div class="footer__links">
                     <div class="footer__column">
-                        <h4>Candidats</h4>
+                        <h4>Navigation</h4>
                         <ul>
-                            <li><a href="#candidat-flow">Créer mon dossier</a></li>
-                            <li><a href="#candidat-help">Être accompagné</a></li>
+                            <li><a href="#recognition-section">Problèmes</a></li>
+                            <li><a href="#solution-section">Solutions</a></li>
+                            <li><a href="#how-section">Comment ça marche</a></li>
                         </ul>
                     </div>
                     <div class="footer__column">
-                        <h4>Professionnels</h4>
+                        <h4>Contact</h4>
                         <ul>
-                            <li><a href="#agence-flow">Demander une démo</a></li>
                             <li><a href="https://linkedin.com/company/seventee" target="_blank">LinkedIn</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer__column">
-                        <h4>Aide</h4>
-                        <ul>
-                            <li><a href="#proprietaire-help">Trouver une agence</a></li>
-                            <li><a href="mailto:contact@seventee.com">Contact</a></li>
+                            <li><a href="mailto:contact@seventee.com">Contactez-nous</a></li>
                         </ul>
                     </div>
                 </div>

@@ -352,23 +352,6 @@ body {
     flex-wrap: wrap;
 }
 
-.back-btn {
-    background: none;
-    border: 1px solid var(--gray-300);
-    color: var(--gray-600);
-    padding: var(--space-s) var(--space-l);
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    font-size: var(--font-size-sm);
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.back-btn:hover {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-}
-
 .flow-header h2 {
     font-size: var(--font-size-3xl);
     font-weight: 700;
@@ -387,34 +370,7 @@ body {
     margin: 0 auto;
 }
 
-.flow-explanation {
-    text-align: center;
-    margin-bottom: var(--space-4xl);
-}
-
-.flow-intro {
-    font-size: var(--font-size-xl);
-    font-weight: 600;
-    color: var(--gray-800);
-    margin-bottom: var(--space-2xl);
-}
-
-.flow-center-text {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.flow-center-text p {
-    font-size: var(--font-size-base);
-    color: var(--gray-600);
-    margin-bottom: var(--space-l);
-}
-
-.flow-highlight {
-    font-weight: 600;
-    color: var(--primary-color);
-    font-size: var(--font-size-lg);
-}
+/* Styles supprimés - Section flow-explanation obsolète */
 
 /* Steps - Structure wireframe du croquis */
 .flow-steps {
@@ -438,28 +394,6 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-.step-visual {
-    width: 100%;
-    height: 120px;
-    background: var(--gray-200);
-    border-radius: var(--radius-md);
-    margin-bottom: var(--space-l);
-    position: relative;
-    overflow: hidden;
-}
-
-.step-visual::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 40px;
-    height: 40px;
-    background: var(--gray-300);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .step-card p {
     font-size: var(--font-size-sm);
     color: var(--gray-700);
@@ -467,27 +401,6 @@ body {
 }
 
 /* CTA des Flows */
-.flow-cta {
-    text-align: center;
-}
-
-.flow-btn-primary {
-    background: var(--primary-color);
-    color: var(--white);
-    border: none;
-    padding: var(--space-l) var(--space-3xl);
-    border-radius: var(--radius-md);
-    font-size: var(--font-size-lg);
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.flow-btn-primary:hover {
-    background: var(--primary-hover);
-    transform: translateY(-1px);
-}
-
 .flow-contact {
     margin-top: var(--space-l);
 }
@@ -500,31 +413,6 @@ body {
 
 .flow-contact a:hover {
     text-decoration: underline;
-}
-
-/* Pages d'Aide */
-.help-page {
-    display: none;
-    background: var(--white);
-    padding: var(--space-4xl) 0;
-    min-height: 100vh;
-}
-
-.help-page.active {
-    display: block;
-}
-
-.help-content {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.help-content p {
-    font-size: var(--font-size-lg);
-    color: var(--gray-600);
-    margin-bottom: var(--space-2xl);
-    line-height: 1.6;
 }
 
 /* Sections Détaillées - Style versions B et C */
@@ -786,110 +674,43 @@ body {
 }
 
 .footer__legal a:hover {
-    color: var(--gray-300);
+    text-decoration: underline;
 }
 
-/* Responsive Design - Simple et efficace */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 var(--space-l);
-    }
-    
-    .header__content {
-        flex-direction: column;
-        gap: var(--space-l);
-    }
-    
-    .nav {
-        gap: var(--space-l);
-    }
-    
-    .title-main {
-        font-size: var(--font-size-3xl);
-    }
-    
-    .sections-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-2xl);
-    }
-    
-    .orientation-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: var(--space-l);
-    }
-    
-    .flow-steps {
-        grid-template-columns: 1fr;
-        gap: var(--space-l);
-    }
-    
-    .footer__content {
-        grid-template-columns: 1fr;
-        gap: var(--space-xl);
-        text-align: center;
-    }
-    
-    .footer__bottom {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    /* Responsive pour les sections détaillées */
-    .dual-layout {
-        grid-template-columns: 1fr;
-        gap: var(--space-2xl);
-    }
-    
-    .detail-section {
-        padding: var(--space-3xl) 0;
-    }
-    
-    .detail-section-title {
-        font-size: var(--font-size-2xl);
-    }
-}
+/* === Styles des Anciennes Sections (Maintenant Supprimés) === */
+/* Les classes .flow-page, .help-page, .back-btn, .flow-cta, .step-visual etc. ne sont plus utilisées. */
 
-@media (max-width: 480px) {
-    .main-page {
-        padding: var(--space-3xl) 0;
-    }
-    
-    .title-main {
-        font-size: var(--font-size-2xl);
-    }
-    
-    .search-input, .search-button {
-        padding: var(--space-m) var(--space-l);
-    }
-    
-    .section-card {
-        padding: var(--space-2xl) var(--space-l);
-    }
-    
-    .orientation-btn {
-        padding: var(--space-m) var(--space-l);
-        font-size: var(--font-size-xs);
-    }
-}
-
-/* Animations subtiles - Fidèles à l'esprit minimaliste */
-.section-card,
-.step-card,
-.orientation-btn {
-    transition: all 0.2s ease;
-}
-
-/* États focus pour l'accessibilité */
-button:focus,
-input:focus,
-select:focus,
-a:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-}
 
 /* === Nouveaux Éléments Modernes SaaS 2025 === */
+
+/* CTA Flottant */
+.floating-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: var(--space-l) var(--space-2xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--gray-200);
+}
+
+.floating-cta:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.floating-cta-icon {
+    font-size: 1.5em;
+}
 
 /* Hero Badge */
 .hero-badge {
@@ -1112,7 +933,8 @@ a:focus {
 @media print {
     .header,
     .footer,
-    .orientation-buttons {
+    .assistance-nav,
+    .floating-cta {
         display: none;
     }
     
@@ -1127,4 +949,20 @@ a:focus {
         border: 1px solid #000;
         page-break-inside: avoid;
     }
+}
+
+/* Animations subtiles - Fidèles à l'esprit minimaliste */
+.section-card,
+.step-card,
+.orientation-btn {
+    transition: all 0.2s ease;
+}
+
+/* États focus pour l'accessibilité */
+button:focus,
+input:focus,
+select:focus,
+a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
